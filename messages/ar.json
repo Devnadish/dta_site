@@ -1,0 +1,194 @@
+{
+  "app": {
+    "name": "حلم إلى تطبيق",
+    "slogan": "نحوّل أفكارك إلى واقع ملموس"
+  },
+  "navigation": {
+    "services": {
+      "title": "خدماتنا",
+      "subMenu": {
+        "webApp": "تطوير مواقع الويب العصرية",
+        "mobileApp": "تطبيقات جوال مبتكرة",
+        "ecommerce": "حلول متقدمة للتجارة الإلكترونية",
+        "uiUx": "تصميم واجهات جذابة وسهلة الاستخدام",
+        "visualIdentity": "بناء هوية بصرية فريدة",
+        "digitalMarketing": "استراتيجيات تسويق رقمي فعّالة"
+      }
+    },
+    "technologies": {
+      "title": "التقنيات",
+      "subMenu": {
+        "nextjs": {
+          "title": "Next.js",
+          "description": "إطار عمل متطور لإنشاء مواقع React بسرعة وأداء عاليين."
+        },
+        "nodejs": {
+          "title": "Node.js",
+          "description": "منصة قوية لتطوير الخدمات الخلفية القابلة للتطوير."
+        },
+        "react": {
+          "title": "React",
+          "description": "أفضل مكتبة لبناء واجهات مستخدم تفاعلية وسهلة."
+        },
+        "reactNative": {
+          "title": "React Native",
+          "description": "إنشاء تطبيقات جوال أصلية تعمل على iOS وAndroid باستخدام تقنية واحدة."
+        },
+        "mongoDB": {
+          "title": "MongoDB",
+          "description": "قاعدة بيانات مرنة لتخزين بياناتك بشكل فعال وآمن."
+        },
+        "firebase": {
+          "title": "Firebase",
+          "description": "أدوات متكاملة لتطوير التطبيقات تشمل قواعد بيانات فورية والمصادقة."
+        },
+        "aws": {
+          "title": "AWS",
+          "description": "خدمات سحابية موثوقة لاستضافة تطبيقاتك بسهولة وأمان."
+        },
+        "prisma": {
+          "title": "Prisma",
+          "description": "أداة حديثة لإدارة قواعد البيانات بطريقة سهلة وفعالة."
+        },
+        "sanity": {
+          "title": "Sanity",
+          "description": "اجعل محتوى موقعك أداة قوة تنافسية مميزة."
+        }
+      }
+    },
+    "workSamples": {
+      "title": "أعمالنا",
+      "subMenu": {
+        "webApp": "تطبيقات ويب",
+        "mobileApp": "تطبيقات جوال",
+        "uiUx": "تصاميم واجهات المستخدم",
+        "visualIdentity": "تصاميم الهوية البصرية",
+        "digitalMarketing": "حملات التسويق الرقمي",
+        "more": "مشاريع أخرى"
+      }
+    },
+    "prices": {
+      "title": "خطط الأسعار",
+      "basic": "الخطة الأساسية",
+      "pro": "الخطة الاحترافية",
+      "enterprise": "خطة الشركات",
+      "custom": "عرض مخصص"
+    },
+    "contactus": {
+      "title": "تواصل معنا",
+      "whatsapp": "راسلنا على واتساب",
+      "email": "أرسل بريدًا إلكترونيًا",
+      "phone": "اتصل بنا مباشرةً",
+      "form": "املأ نموذج الاتصال"
+    },
+    "plugin": {
+      "title": "الإضافات",
+      "crombo": "خدمات كرومبو",
+      "latestnews": "أحدث الأخبار"
+    }
+  },
+  "buttons": {
+    "showMore": "مشاهدة المزيد",
+    "showLess": "عرض أقل",
+    "showGallery": "استعرض المعرض",
+    "details": "عرض التفاصيل",
+    "sending": "يتم الإرسال الآن...",
+    "more": "اقرأ المزيد"
+  },
+  "login": {
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "loginHint": "يرجى تسجيل الدخول للاستفادة من خدماتنا",
+    "mustLogin": "الرجاء تسجيل الدخول لطرح سؤالك"
+  },
+  "contactUsPage": {
+    "pageTitle": "اتصل بنا",
+    "hint": "يرجى تقديم معلومات صحيحة لتمكيننا من خدمتك بسرعة وكفاءة.",
+    "mobile": "رقم الجوال",
+    "mobilePlaceholder": "أدخل رقمًا مكونًا من 10 أرقام",
+    "mobileValidationError": "يجب أن يكون الرقم مكونًا من 10 أرقام على الأقل",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "example@example.com",
+    "emailValidationError": "يرجى إدخال بريد إلكتروني صالح",
+    "message": "الرسالة",
+    "messagePlaceholder": "كيف يمكننا مساعدتك؟",
+    "messageValidationError": "الرسالة يجب أن تحتوي على 10 أحرف على الأقل",
+    "sendButton": "أرسل رسالتك الآن",
+    "name": "الاسم"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "عذرًا، الصفحة غير موجودة",
+    "description": "الصفحة التي تبحث عنها غير متوفرة حاليًا.",
+    "button": "العودة إلى الصفحة الرئيسية"
+  },
+  "homepage": {
+    "fromIdeaTitle": "من الفكرة إلى منتج رقمي ناجح",
+    "fromIdeaContent": "نحول أفكارك الجريئة إلى حلول رقمية مميزة تجذب العملاء وتدفع عملك نحو النجاح. بالجمع بين الإبداع والتكنولوجيا، نقدم منتجات مبتكرة تحقق نتائج ملموسة.",
+    "fromIdeaButton": "ابدأ رحلتك معنا الآن!",
+    "discoverTitle": "اكتشف الحلول",
+    "discoverContent": "نبحث معًا عن أفضل الأفكار لتحويل رؤيتك إلى واقع. نجعل كل فكرة، مهما كانت بسيطة، نقطة انطلاق نحو النجاح.",
+    "discoverButton": "ابدأ الاستكشاف الآن"
+  },
+  "mobileAppPhases": {
+    "discoveryPlanningTitle": "التخطيط والاكتشاف",
+    "discoveryPlanningDescription": "نفهم احتياجاتك ونضع خطة واضحة لمشروعك.",
+    "uiUxDesignTitle": "تصميم جذاب وسهل",
+    "uiUxDesignDescription": "نصمم واجهات مستخدم جميلة وسهلة الاستخدام.",
+    "developmentTitle": "التطوير",
+    "developmentDescription": "نبني تطبيقًا متطورًا بأحدث التقنيات لضمان الأداء العالي.",
+    "testingQATitle": "الاختبار والجودة",
+    "testingQADescription": "نتأكد من خلو التطبيق من الأخطاء وملاءمته لجميع المعايير.",
+    "deploymentTitle": "النشر",
+    "deploymentDescription": "إطلاق سلس لتطبيقك على متاجر التطبيقات.",
+    "maintenanceUpdatesTitle": "الدعم والتحديثات",
+    "maintenanceUpdatesDescription": "دعم مستمر لتحسين تطبيقك وإبقائه مميزًا.",
+    "userFeedbackIterationTitle": "تحسين بناءً على آراء المستخدمين",
+    "userFeedbackIterationDescription": "نستمع لملاحظات المستخدمين لتحسين تطبيقك باستمرار."
+  },
+  "footer": {
+    "readyToTransform": "هل أنت مستعد لتحويل فكرتك إلى حقيقة؟",
+    "buildSomethingGreat": "دعنا نبني شيئًا مذهلاً معًا",
+    "getInTouch": "تواصل معنا اليوم",
+    "callUsNow": "اتصل بنا الآن للحصول على استشارة مجانية",
+    "footerIllustrationAlt": "رسم توضيحي يعكس تعاوننا",
+    "chatWithUs": "تحدث معنا الآن واحصل على الدعم",
+    "phoneNumber": "+1 (123) 456-7890",
+    "emailAddress": "info@yourcompany.com"
+  },
+  "services": {
+    "buildingTomorrow": "نبتكر حلول المستقبل",
+    "solutions": "حلول مبتكرة",
+    "today": "لإنجازات اليوم",
+    "blendingCreativity": "نجمع بين الإبداع والتقنية لنقدّم حلولًا مخصصة لعملك.",
+    "websiteDevelopmentTitle": "تطوير المواقع الإلكترونية",
+    "websiteDevelopmentDescription": "نصمم مواقع جذابة تزيد من تفاعل الزوار وتحولهم إلى عملاء.",
+    "mobileAppDevelopmentTitle": "تطبيقات الجوال",
+    "mobileAppDevelopmentDescription": "نبتكر تطبيقات مميزة تسهّل الوصول إلى عملائك.",
+    "crmDevelopmentTitle": "أنظمة CRM",
+    "crmDevelopmentDescription": "أدوات فعالة لإدارة علاقات العملاء وتعزيز ولائهم.",
+    "ecommerceDevelopmentTitle": "متاجر إلكترونية",
+    "ecommerceDevelopmentDescription": "نساعدك على بناء متجر إلكتروني يسهم في زيادة مبيعاتك.",
+    "uiUxDesignTitle": "تصاميم واجهات المستخدم",
+    "uiUxDesignDescription": "تصاميم عصرية تضمن تجربة مميزة للمستخدم.",
+    "digitalMarketingTitle": "التسويق الرقمي",
+    "digitalMarketingDescription": "نضعك في مقدمة المنافسة عبر استراتيجيات تسويقية مدروسة.",
+    "visualIdentityTitle": "الهوية البصرية",
+    "visualIdentityDescription": "هوية بصرية لا تُنسى تعكس روح علامتك التجارية.",
+    "getQuote": "احصل على عرض سعر الآن"
+  },
+  "whyChooseUs": {
+    "whyChooseUs": "لماذا نحن الأفضل؟",
+    "whatMakesUsDifferent": "ما الذي يميزنا عن غيرنا؟",
+    "costEfficiencyTitle": "أسعار تنافسية",
+    "costEfficiencyDescription": "استفد من حلولنا وقلل التكاليف بنسبة تصل إلى 30%.",
+    "onDemandTitle": "خدمات مخصصة",
+    "onDemandDescription": "اختر فريق العمل المثالي لمشروعك.",
+    "itExpertsTitle": "خبراء تقنيون",
+    "itExpertsDescription": "استفد من مهارات فريقنا المتخصص لتطوير عملك.",
+    "timeFlexibilityTitle": "مرونة في الوقت",
+    "timeFlexibilityDescription": "جدول عمل يتناسب مع متطلباتك.",
+    "securePrivacyTitle": "الأمان والسرية",
+    "securePrivacyDescription": "حماية بياناتك هي أولويتنا."
+  }
+}

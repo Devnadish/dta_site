@@ -19,6 +19,8 @@ import twilio from "@iconify/icons-logos/twilio-icon";
 import photoshop from "@iconify/icons-logos/adobe-photoshop";
 import illustrator from "@iconify/icons-logos/adobe-illustrator";
 import buffer from "@iconify/icons-logos/buffer";
+import whatsapp from "@iconify/icons-logos/whatsapp-icon";
+
 import tiktok from "@iconify/icons-logos/tiktok-icon";
 import snapchat from "@iconify/icons-tabler/brand-snapchat";
 import youtube from "@iconify/icons-tabler/brand-youtube";
@@ -36,6 +38,9 @@ import custom from "@iconify/icons-tabler/focus-centered";
 import code from "@iconify/icons-tabler/code";
 import calendartime from "@iconify/icons-tabler/calendar-time";
 import shield from "@iconify/icons-tabler/shield-check";
+import emailIcon from "@iconify/icons-tabler/mail";
+import phoneIcon from "@iconify/icons-tabler/phone";
+import formIcon from "@iconify/icons-tabler/forms";
 
 export const technology = {
   js: { name: "JavaScript", icon: js },
@@ -82,4 +87,11 @@ export const whyChooseUs = {
   expert: code,
   timeFlex: calendartime,
   shield: shield,
+};
+
+export const contactUs = {
+  whatsapp: { name: "whatsapp", icon: whatsapp },
+  email: { name: "email", icon: emailIcon },
+  phone: { name: "email", icon: phoneIcon },
+  form: { name: "email", icon: formIcon },
 };

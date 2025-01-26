@@ -25,7 +25,7 @@ export function Plugin({ locale }: { locale: string }) {
             className="flex items-center justify-center flex-col"
           >
             <Crombo />
-            <Text variant="span" locale={locale}>
+            <Text variant="span" locale={locale} cairoFont>
               {t("plugin.crombo")}
             </Text>
           </Link>
@@ -36,7 +36,7 @@ export function Plugin({ locale }: { locale: string }) {
             className="flex items-center justify-center flex-col"
           >
             <Crombo />
-            <Text variant="span" locale={locale}>
+            <Text variant="span" locale={locale} cairoFont>
               {t("plugin.latestnews")}
             </Text>
           </Link>

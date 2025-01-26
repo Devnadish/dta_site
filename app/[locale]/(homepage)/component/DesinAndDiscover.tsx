@@ -56,7 +56,12 @@ export const DesinAndDiscover = async () => {
             "bg-primary text-primary-foreground hover:bg-white/90 flex-1 "
           )}
         >
-          <Text variant="h2" locale={locale} className="text-sm sm:text-lg">
+          <Text
+            variant="h2"
+            locale={locale}
+            className="text-sm sm:text-lg"
+            cairoFont
+          >
             {t("discoverButton")}
           </Text>
         </Link>

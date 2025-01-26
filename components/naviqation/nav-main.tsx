@@ -21,35 +21,35 @@ import { useTranslations } from "next-intl";
 import Text from "../Text";
 import Link from "next/link";
 
-export function NavMain({
-  items,
-  locale,
-}: {
+interface Item {
+  title: string;
+  url: string;
+  icon?: any;
+  isActive?: boolean;
+  items?: Item[];
+}
+
+interface NavMainProps {
   locale: string;
-  items: {
-    title: string;
-    url: string;
-    icon?: IconifyIcon;
-    isActive?: boolean;
-    items?: {
-      title: string;
-      url: string;
-    }[];
-  }[];
-}) {
+  items?: Item[];
+}
+
+export function NavMain({ locale, items = [] }: NavMainProps) {
   const t = useTranslations("app");
   const { state } = useSidebar();
+
   return (
     <SidebarGroup>
       {state !== "collapsed" && (
         <>
-          <Text variant="h1" className="text-sm " locale={locale}>
+          <Text variant="h1" className="text-sm" locale={locale} cairoFont>
             {t("name")}
           </Text>
           <Text
             variant="h2"
             locale={locale}
-            className="text-xs text-muted-foreground  mt-2"
+            className="text-xs text-muted-foreground mt-2"
+            cairoFont
           >
             {t("slogan")}
           </Text>
@@ -70,31 +70,45 @@ export function NavMain({
                   {item.icon && (
                     <Icon icon={item.icon} width="24" height="24" />
                   )}
-
-                  <Text variant="span" className="text-sm" locale={locale}>
+                  <Text
+                    variant="span"
+                    className="text-sm"
+                    locale={locale}
+                    cairoFont
+                  >
                     {item.title}
                   </Text>
-
                   <Icon icon={chevrons} width="24" height="24" />
                 </SidebarMenuButton>
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <SidebarMenuSub>
-                  {item.items?.map((subItem) => (
-                    <SidebarMenuSubItem key={subItem.title}>
-                      <SidebarMenuSubButton asChild>
-                        <Link href={subItem.url}>
-                          <Text
-                            variant="span"
-                            className="text-sm"
-                            locale={locale}
-                          >
-                            {subItem.title}
-                          </Text>
-                        </Link>
-                      </SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                  ))}
+                  {item.items?.map((subItem) => {
+                    console.log(subItem);
+                    return (
+                      <SidebarMenuSubItem key={subItem.title}>
+                        <SidebarMenuSubButton asChild>
+                          <Link href={subItem.url}>
+                            {subItem.icon && (
+                              <Icon
+                                icon={subItem.icon}
+                                width="24"
+                                height="24"
+                              />
+                            )}
+                            <Text
+                              variant="span"
+                              className="text-sm"
+                              locale={locale}
+                              cairoFont
+                            >
+                              {subItem.title}
+                            </Text>
+                          </Link>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    );
+                  })}
                 </SidebarMenuSub>
               </CollapsibleContent>
             </SidebarMenuItem>

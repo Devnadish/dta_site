@@ -8,6 +8,7 @@ interface TypographyProps<T extends ElementType> {
   className?: string;
   locale?: string;
   props?: ComponentPropsWithoutRef<T>;
+  cairoFont?: boolean;
 }
 
 const Text = <T extends ElementType = "p">({
@@ -16,11 +17,15 @@ const Text = <T extends ElementType = "p">({
   variant = "p",
   className,
   locale = "en",
+  cairoFont = false,
   ...props
 }: TypographyProps<T> &
   Omit<ComponentPropsWithoutRef<T>, keyof TypographyProps<T>>) => {
   const getFontFamily = () => {
-    return locale === "ar" ? "tajawal" : "roboto";
+    if (locale === "ar") {
+      return cairoFont ? "cairo" : "tajawal"; // Use cairo if cairoFont is true, otherwise use tajawal
+    }
+    return "roboto"; // Default to roboto for non-Arabic locales
   };
 
   const variants = {

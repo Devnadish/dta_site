@@ -1,4 +1,4 @@
-import { roboto, tajawal } from "@/lib/importFonts"; // Import the new fonts
+import { roboto, tajawal, cairo } from "@/lib/importFonts"; // Import the new fonts
 import { ThemeProvider } from "@/provider/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
@@ -23,7 +23,7 @@ export default async function RootLayout({
         suppressHydrationWarning
       >
         <body
-          className={`min-h-screen bg-background ${roboto.variable} ${tajawal.variable} antialiased`}
+          className={`min-h-screen bg-background ${roboto.variable} ${tajawal.variable}  ${cairo.variable} antialiased`}
         >
           <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider>{children}</ThemeProvider>

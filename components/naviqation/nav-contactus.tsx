@@ -1,26 +1,8 @@
-"use client";
-
-import {
-  Folder,
-  Forward,
-  MoreHorizontal,
-  Trash2,
-  type LucideIcon,
-} from "lucide-react";
 import { Icon, IconifyIcon } from "@iconify/react";
 
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import {
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
-  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
@@ -44,7 +26,7 @@ export function NavContactUs({
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <Text variant="span" locale={locale}>
+      <Text variant="span" locale={locale} cairoFont>
         {t("contactus.title")}
       </Text>
       <SidebarMenu>
@@ -53,7 +35,7 @@ export function NavContactUs({
             <SidebarMenuButton asChild>
               <a href={item.url}>
                 <Icon icon={item.icon} width="24" height="24" />
-                <Text variant="span" locale={locale}>
+                <Text variant="span" locale={locale} cairoFont>
                   {item.name}
                 </Text>
               </a>

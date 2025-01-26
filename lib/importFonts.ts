@@ -21,7 +21,7 @@ const roboto = localFont({
 const tajawal = localFont({
   src: [
     {
-      path: "../fonts/Tajawal-Light.ttf", // Light weight
+      path: "../fonts/cairo.ttf", // Light weight
       weight: "300",
       style: "normal",
     },
@@ -44,4 +44,15 @@ const tajawal = localFont({
   variable: "--font-tajawal", // CSS variable for Tajawal
 });
 
-export { roboto, tajawal };
+const cairo = localFont({
+  src: [
+    {
+      path: "../fonts/cairo.ttf", // Variable font for normal style
+      weight: "200 1000", // Range of weights supported
+      style: "normal",
+    },
+  ],
+  variable: "--font-cairo", // CSS variable for Cairo
+});
+
+export { roboto, tajawal, cairo };

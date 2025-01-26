@@ -69,6 +69,7 @@ export default {
       fontFamily: {
         roboto: ["var(--font-roboto)", "sans-serif"], // Roboto variable font
         tajawal: ["var(--font-tajawal)", "sans-serif"], // Tajawal font
+        cairo: ["var(--font-cairo)", "sans-serif"], // cairo font
       },
       fontWeight: {
         thin: "100",

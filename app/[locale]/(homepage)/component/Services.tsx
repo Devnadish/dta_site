@@ -178,7 +178,14 @@ const CardComponent = ({
         <CardHeader className="flex flex-col items-center text-center">
           <CardTitle className="flex flex-col items-center gap-2 text-xl font-bold ">
             <Iconify icon={icon} className="w-12 h-12" />
-            {t(title)}
+            <Text
+              variant="h3"
+              locale={locale}
+              className="text-balance font-cairo"
+              cairoFont
+            >
+              {t(title)}
+            </Text>
           </CardTitle>
           <CardDescription className="mt-2 text-muted-foreground">
             <Text variant="p" locale={locale} className="text-balance">
@@ -212,7 +219,12 @@ const CardComponent = ({
             href={"/"}
             className={cn(buttonVariants({ variant: "default" }))}
           >
-            <Text variant="h2" locale={locale} className="text-lg">
+            <Text
+              variant="h2"
+              locale={locale}
+              className="text-lg font-cairo"
+              cairoFont
+            >
               {t("getQuote")}
             </Text>
           </Link>

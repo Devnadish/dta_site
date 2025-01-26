@@ -12,7 +12,7 @@ const Footer: React.FC = async () => {
   const emailAddress = "info@dreamto.app";
 
   return (
-    <div className="bg-gray-900 text-white py-16">
+    <footer className="bg-gray-950 text-white py-16">
       <section className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Left Section - Text and CTA */}
@@ -20,40 +20,40 @@ const Footer: React.FC = async () => {
             <Text
               variant="h3"
               locale={locale}
-              className="text-4xl md:text-2xl font-bold mb-4"
+              className="text-5xl md:text-3xl font-extrabold mb-4"
             >
               {t("readyToTransform")}
             </Text>
             <Text
               variant="p"
               locale={locale}
-              className="text-lg text-gray-300 mb-8 text-center"
+              className="text-lg text-gray-400 mb-8 text-center"
             >
               {t("buildSomethingGreat")}
             </Text>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
                 href={`mailto:${emailAddress}`}
-                className="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2"
+                className="bg-white text-gray-950 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-300 flex items-center justify-center gap-2 shadow-md"
               >
                 <Mail className="w-5 h-5" />
                 <Text
                   variant="p"
                   locale={locale}
-                  className="text-lg  text-center"
+                  className="text-lg text-center"
                 >
                   {t("getInTouch")}
                 </Text>
               </a>
               <a
                 href={`tel:${phoneNumber}`}
-                className="border border-white text-white px-8 py-2 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-colors duration-300 flex items-center justify-center gap-2"
+                className="border border-white text-white px-8 py-2 rounded-full font-semibold hover:bg-white hover:text-gray-950 transition-colors duration-300 flex items-center justify-center gap-2 shadow-md"
               >
                 <Phone className="w-5 h-5" />
                 <Text
                   variant="p"
                   locale={locale}
-                  className="text-lg  text-center"
+                  className="text-lg text-center"
                 >
                   {t("callUsNow")}
                 </Text>
@@ -66,7 +66,7 @@ const Footer: React.FC = async () => {
             <Image
               src="https://d2yq1wt6p3tg8m.cloudfront.net/assets/images/new-landing/footer-g.png"
               alt={t("footerIllustrationAlt")}
-              className="w-full max-w-sm lg:max-w-md animate-float"
+              className="w-full max-w-sm lg:max-w-md animate-bounce"
               width="380"
               height="364"
             />
@@ -79,7 +79,7 @@ const Footer: React.FC = async () => {
             <MessageCircle className="w-6 h-6 text-primary" />
             <a
               href={`mailto:${emailAddress}`}
-              className="text-gray-300 hover:text-white transition-colors"
+              className="text-gray-400 hover:text-white transition-colors"
             >
               {t("chatWithUs")}
             </a>
@@ -88,7 +88,7 @@ const Footer: React.FC = async () => {
             <Phone className="w-6 h-6 text-primary" />
             <a
               href={`tel:${phoneNumber}`}
-              className="text-gray-300 hover:text-white transition-colors"
+              className="text-gray-400 hover:text-white transition-colors"
             >
               {phoneNumber}
             </a>
@@ -97,14 +97,14 @@ const Footer: React.FC = async () => {
             <Mail className="w-6 h-6 text-primary" />
             <a
               href={`mailto:${emailAddress}`}
-              className="text-gray-300 hover:text-white transition-colors"
+              className="text-gray-400 hover:text-white transition-colors"
             >
               {emailAddress}
             </a>
           </div>
         </div>
       </section>
-    </div>
+    </footer>
   );
 };
 

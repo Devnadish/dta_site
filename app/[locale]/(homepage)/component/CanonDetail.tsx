@@ -78,7 +78,7 @@ async function CanonDetail() {
             "bg-white text-black hover:bg-white/90 flex-1 "
           )}
         >
-          <Text variant="h2" locale={locale} className="text-lg">
+          <Text variant="h2" locale={locale} className="text-lg" cairoFont>
             {locale === "ar" ? arDetail.action : enDetail.action}
           </Text>
         </Link>

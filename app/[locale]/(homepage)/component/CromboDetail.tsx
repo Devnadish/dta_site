@@ -81,7 +81,12 @@ async function CromboDetail() {
             "bg-white text-black text-lg hover:bg-white/90  "
           )}
         >
-          <Text variant="h2" locale={locale} className="text-lg text-wrap">
+          <Text
+            variant="h2"
+            locale={locale}
+            className="text-lg text-wrap"
+            cairoFont
+          >
             {locale === "ar" ? arDetail.action : enDetail.action}
           </Text>
         </Link>

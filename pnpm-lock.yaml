@@ -8,9 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@iconify/icons-logos':
+        specifier: ^1.2.36
+        version: 1.2.36
       '@iconify/icons-tabler':
         specifier: ^1.2.95
         version: 1.2.95
+      '@iconify/icons-vscode-icons':
+        specifier: ^1.2.29
+        version: 1.2.29
       '@iconify/react':
         specifier: ^5.2.0
         version: 5.2.0(react@19.0.0)
@@ -162,8 +168,14 @@ packages:
   '@formatjs/intl-localematcher@0.5.10':
     resolution: {integrity: sha512-af3qATX+m4Rnd9+wHcjJ4w2ijq+rAVP3CCinJQvFv1kgSu1W6jypUmvleJxcewdxmutM8dmIRZFxO/IQBZmP2Q==}
 
+  '@iconify/icons-logos@1.2.36':
+    resolution: {integrity: sha512-RVdZE9figuWmd8HeVmM8oQvOdv/4YzXV6lZ+G9QJgzCB/VBLV0inPltZxOt939oj4GbKbr7PF6J4bADMua/GPw==}
+
   '@iconify/icons-tabler@1.2.95':
     resolution: {integrity: sha512-m4O1iTXJZasEZJudWHDAhrGnVEsTHmX8G3pk4Ag8IjPwLh77y5a0ek+zU+8xEd0+9APUV7SubK+GVd/WepMbbA==}
+
+  '@iconify/icons-vscode-icons@1.2.29':
+    resolution: {integrity: sha512-EwmcXfDO6iAbM8+0KlMV/akAxzN5GBS61cjuEy/blqUZ9+RU7jOyfHRV1AXXPisGMsB1fbOLoUoTTrhu1fXLnw==}
 
   '@iconify/react@5.2.0':
     resolution: {integrity: sha512-7Sdjrqq3fkkQNks9SY3adGC37NQTHsBJL2PRKlQd455PoDi9s+Es9AUTY+vGLFOYs5yO9w9yCE42pmxCwG26WA==}
@@ -1603,7 +1615,15 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
+  '@iconify/icons-logos@1.2.36':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify/icons-tabler@1.2.95':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify/icons-vscode-icons@1.2.29':
     dependencies:
       '@iconify/types': 2.0.0
 

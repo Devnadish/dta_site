@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/sidebar";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import Crombo from "../plugin/Crombo";
+import Crombo from "../Crombo";
 import Text from "../Text";
 
 export function Plugin({ locale }: { locale: string }) {

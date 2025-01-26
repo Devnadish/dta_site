@@ -81,6 +81,52 @@ export default {
         extrabold: "800",
         black: "900",
       },
+      backgroundImage: {
+        // Existing Custom Gradient
+        "gradient-custom":
+          "linear-gradient(to bottom, #0f172a, #1f2937, #374151, rgba(55, 65, 81, 0))",
+
+        // Gradient 1: Vibrant Sunset
+        "gradient-sunset": "linear-gradient(to bottom, #ff7e5f, #feb47b)", // Vibrant orange-pink transition
+
+        // Gradient 2: Cool Ocean
+        "gradient-ocean": "linear-gradient(to bottom, #2193b0, #6dd5ed)", // Light blue to teal
+
+        // Gradient 3: Purple Bliss
+        "gradient-purple": "linear-gradient(to bottom, #8e2de2, #4a00e0)", // Deep purple to rich blue
+
+        // Gradient 4: Tropical Vibes
+        "gradient-tropical": "linear-gradient(to bottom, #00c6ff, #0072ff)", // Bright cyan to royal blue
+
+        // Gradient 5: Golden Hour
+        "gradient-golden": "linear-gradient(to bottom, #f2994a, #f2c94c)", // Warm gold and yellow
+
+        // Gradient 6: Forest Hues
+        "gradient-forest": "linear-gradient(to bottom, #11998e, #38ef7d)", // Rich green to light green
+
+        // Gradient 7: Modern Gray Fade
+        "gradient-gray": "linear-gradient(to bottom, #2c3e50, #bdc3c7)",
+        "gradient-blue-official":
+          "linear-gradient(to bottom, #0f172a, #1e40af, #2563eb)", // Navy blue to royal blue
+
+        // Gradient 2: Subtle Sky Blue
+        "gradient-blue-sky":
+          "linear-gradient(to bottom, #2563eb, #60a5fa, #93c5fd)", // Royal blue to soft sky blue
+
+        // Gradient 3: Elegant Blue Fade
+        "gradient-blue-fade":
+          "linear-gradient(to bottom, #1e3a8a, #3b82f6, rgba(59, 130, 246, 0))", // Dark blue to fade-out
+
+        // Gradient 4: Deep Ocean
+        "gradient-blue-ocean":
+          "linear-gradient(to bottom, #0f172a, #1e3a8a, #2563eb, #60a5fa)", // Navy blue to light blue
+
+        // Gradient 5: Corporate Cool
+        "gradient-blue-corporate":
+          "linear-gradient(to bottom, #1e40af, #3b82f6)", // Dark gray to light gray
+        "gradient-blue-light": "linear-gradient(to bottom, #e0f2fe, #90cdf4)", // Light pastel blue gradient
+        "gradient-blue-modern": "linear-gradient(to bottom, #cfe8ff, #3b82f6)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

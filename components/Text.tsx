@@ -36,7 +36,6 @@ const Text = <T extends ElementType = "p">({
 
   const Component = as || variant;
   const fontFamily = getFontFamily();
-  console.log("fontFamily", fontFamily, locale);
   return (
     <Component
       className={cn(

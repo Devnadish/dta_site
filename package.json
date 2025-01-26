@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@iconify/icons-logos": "^1.2.36",
     "@iconify/icons-tabler": "^1.2.95",
+    "@iconify/icons-vscode-icons": "^1.2.29",
     "@iconify/react": "^5.2.0",
     "@lottiefiles/dotlottie-react": "^0.12.2",
     "@next/bundle-analyzer": "^15.1.6",

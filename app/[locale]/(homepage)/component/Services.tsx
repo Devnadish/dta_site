@@ -1,52 +1,31 @@
-"use client";
 import React from "react";
-import { motion } from "framer-motion"; // For animations
-import {
-  Code,
-  Smartphone,
-  Rocket,
-  Settings,
-  TestTube2,
-  Users,
-  BarChart2,
-  MessageSquareText,
-  Brain,
-  Mic,
-  FlaskConical,
-  ShoppingCart,
-  Package,
-  FileCode,
-  Cpu,
-  Terminal,
-  Server,
-  Cloud,
-  Database,
-  GitBranch,
-  GitPullRequest,
-  LayoutTemplate,
-  PenTool,
-  Megaphone,
-  TrendingUp,
-  Palette,
-  Brush,
-} from "lucide-react"; // Import Lucide Icons
+// Import Lucide Icons
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
   CardContent,
+  CardFooter,
 } from "@/components/ui/card"; // shadcn Card
 import { Badge } from "@/components/ui/badge"; // shadcn Badge
-import { Button } from "@/components/ui/button"; // shadcn Button
-import { useTranslations } from "next-intl";
+import { buttonVariants } from "@/components/ui/button"; // shadcn Button
+import MotionDiv from "@/components/MotionDiv";
+import { serviceIcon, technology } from "@/constant/technologyIcons";
+import { Icon as Iconify, IconifyIcon } from "@iconify/react";
+import Text from "@/components/Text";
+import { getLocale, getTranslations } from "next-intl/server";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 // Define the card data type
 type CardData = {
   title: string;
   description: string;
-  icon: React.ElementType; // Lucide icon component
-  tags: { text: string; icon: React.ElementType }[]; // Tags with Lucide icons
+  locale?: string;
+  t?: any;
+  icon: IconifyIcon; // Lucide icon component
+  tags: { text: string; icon: IconifyIcon }[]; // Tags with Lucide icons
 };
 
 // Card data
@@ -54,96 +33,122 @@ const cardData: CardData[] = [
   {
     title: "websiteDevelopmentTitle",
     description: "websiteDevelopmentDescription",
-    icon: Code,
+    icon: serviceIcon.website.icon,
     tags: [
-      { text: "JavaScript", icon: FileCode },
-      { text: "React.js", icon: Cpu },
-      { text: "Node.js", icon: Terminal },
-      { text: "PHP", icon: Server },
+      { text: technology.js.name, icon: technology.js.icon },
+      { text: technology.html.name, icon: technology.html.icon },
+      { text: technology.css.name, icon: technology.css.icon },
+      { text: technology.react.name, icon: technology.react.icon },
+      { text: technology.nextjs.name, icon: technology.nextjs.icon },
+      { text: technology.xd.name, icon: technology.xd.icon },
     ],
   },
   {
     title: "mobileAppDevelopmentTitle",
     description: "mobileAppDevelopmentDescription",
-    icon: Smartphone,
+    icon: serviceIcon.mobileApp.icon,
     tags: [
-      { text: "React Native", icon: Cpu },
-      { text: "Swift", icon: Code },
-      { text: "Kotlin", icon: Code },
-      { text: "Flutter", icon: GitBranch },
+      { text: technology.react.name, icon: technology.react.icon },
+      { text: technology.reactNative.name, icon: technology.reactNative.icon },
+      { text: technology.mongodb.name, icon: technology.mongodb.icon },
+      { text: technology.firebase.name, icon: technology.firebase.icon },
+      { text: technology.sqlite.name, icon: technology.sqlite.icon },
+      { text: technology.mysql.name, icon: technology.mysql.icon },
+      { text: technology.figma.name, icon: technology.figma.icon },
+      { text: technology.prisma.name, icon: technology.prisma.icon },
     ],
   },
   {
     title: "crmDevelopmentTitle",
     description: "crmDevelopmentDescription",
-    icon: Users,
+    icon: serviceIcon.crm.icon,
     tags: [
-      { text: "Salesforce", icon: Cloud },
-      { text: "Microsoft Dynamics 365", icon: Database },
-      { text: "Zoho CRM", icon: Database },
-      { text: "PHP/MySQL with Laravel", icon: Server },
+      { text: technology.react.name, icon: technology.react.icon },
+      { text: technology.nextjs.name, icon: technology.nextjs.icon },
+      { text: technology.sentry.name, icon: technology.sentry.icon },
+      { text: technology.figma.name, icon: technology.figma.icon },
+      { text: technology.mongodb.name, icon: technology.mongodb.icon },
+      { text: technology.prisma.name, icon: technology.prisma.icon },
     ],
   },
   {
     title: "ecommerceDevelopmentTitle",
     description: "ecommerceDevelopmentDescription",
-    icon: Rocket,
+    icon: serviceIcon.ecomm.icon,
     tags: [
-      { text: "Shopify", icon: ShoppingCart },
-      { text: "Magento", icon: Package },
-      { text: "WooCommerce", icon: ShoppingCart },
-      { text: "React.js", icon: Cpu },
+      { text: technology.react.name, icon: technology.react.icon },
+      { text: technology.nextjs.name, icon: technology.nextjs.icon },
+      { text: technology.figma.name, icon: technology.figma.icon },
+      { text: technology.mongodb.name, icon: technology.mongodb.icon },
+      { text: technology.prisma.name, icon: technology.prisma.icon },
+      { text: technology.mysql.name, icon: technology.mysql.icon },
+      { text: technology.nodeJs.name, icon: technology.nodeJs.icon },
+      { text: technology.shopify.name, icon: technology.shopify.icon },
+      { text: technology.twilio.name, icon: technology.twilio.icon },
+      { text: technology.firebase.name, icon: technology.firebase.icon },
     ],
   },
   {
     title: "uiUxDesignTitle",
     description: "uiUxDesignDescription",
-    icon: LayoutTemplate,
+    icon: serviceIcon.uiux.icon,
     tags: [
-      { text: "Wireframing", icon: PenTool },
-      { text: "Prototyping", icon: LayoutTemplate },
-      { text: "User Research", icon: Users },
-      { text: "Interaction Design", icon: Cpu },
+      { text: technology.figma.name, icon: technology.figma.icon },
+      { text: technology.xd.name, icon: technology.xd.icon },
+      { text: technology.photoshop.name, icon: technology.photoshop.icon },
+      { text: technology.illustrator.name, icon: technology.illustrator.icon },
     ],
   },
   {
     title: "digitalMarketingTitle",
     description: "digitalMarketingDescription",
-    icon: Megaphone,
+    icon: serviceIcon.dm.icon,
     tags: [
-      { text: "SEO", icon: TrendingUp },
-      { text: "Social Media", icon: Megaphone },
-      { text: "PPC", icon: BarChart2 },
-      { text: "Content Marketing", icon: PenTool },
+      { text: technology.photoshop.name, icon: technology.photoshop.icon },
+      { text: technology.illustrator.name, icon: technology.illustrator.icon },
+      { text: technology.buffer.name, icon: technology.buffer.icon },
+      { text: technology.tiktok.name, icon: technology.tiktok.icon },
+      { text: technology.tiktok.name, icon: technology.tiktok.icon },
+      { text: technology.snapchat.name, icon: technology.snapchat.icon },
+      { text: technology.youtube.name, icon: technology.youtube.icon },
+      { text: technology.instgram.name, icon: technology.instgram.icon },
+      { text: technology.twitter.name, icon: technology.twitter.icon },
     ],
   },
   {
     title: "visualIdentityTitle",
     description: "visualIdentityDescription",
-    icon: Palette,
+    icon: serviceIcon.vd.icon,
     tags: [
-      { text: "Logo Design", icon: Brush },
-      { text: "Brand Guidelines", icon: PenTool },
-      { text: "Typography", icon: FileCode },
-      { text: "Color Theory", icon: Palette },
+      { text: technology.photoshop.name, icon: technology.photoshop.icon },
+      { text: technology.illustrator.name, icon: technology.illustrator.icon },
     ],
   },
 ];
 
-const Services = () => {
-  const t = useTranslations("services");
+const Services = async () => {
+  const t = await getTranslations("services");
+  const locale = await getLocale();
   return (
     <div className="min-h-screen bg-muted py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
-          <h2 className="text-4xl font-bold text-gray-900">
-            <span className="text-white">{t("buildingTomorrow")}</span>{" "}
+          <Text
+            variant="h2"
+            locale={locale}
+            className="text-4xl font-bold text-primary"
+          >
+            <span className="text-primary">{t("buildingTomorrow")}</span>{" "}
             <span className="text-orange-500">{t("solutions")}</span>{" "}
-            <span className="text-white">{t("today")}</span>
-          </h2>
-          <p className="mt-4 text-lg text-gray-600">
+            <span className="text-primary">{t("today")}</span>
+          </Text>
+          <Text
+            variant="h2"
+            locale={locale}
+            className="mt-4 text-lg text-gray-600"
+          >
             {t("blendingCreativity")}
-          </p>
+          </Text>
         </div>
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {cardData.map((card, index) => (
@@ -159,40 +164,61 @@ const Services = () => {
 const CardComponent = ({
   title,
   description,
-  icon: Icon,
+  icon,
   tags,
   t,
-}: CardData & { t: any }) => {
+  locale,
+}: CardData) => {
   return (
-    <motion.div
-      whileHover={{ scale: 1.03 }} // Hover animation
-      transition={{ type: "spring", stiffness: 300 }}
+    <MotionDiv
+      whileHoverEffect={{ scale: 0.9, rotate: 5 }}
+      whileTapEffect={{ scale: 0.9, rotate: -5 }}
     >
       <Card className="h-full flex flex-col min-w-[300px]">
         <CardHeader className="flex flex-col items-center text-center">
-          <Icon className="w-12 h-12 text-blue-600 mb-4" />
-          <CardTitle className="text-xl font-bold">{t(title)}</CardTitle>
-          <CardDescription className="mt-2 text-gray-600">
-            {t(description)}
+          <CardTitle className="flex flex-col items-center gap-2 text-xl font-bold ">
+            <Iconify icon={icon} className="w-12 h-12" />
+            {t(title)}
+          </CardTitle>
+          <CardDescription className="mt-2 text-muted-foreground">
+            <Text variant="p" locale={locale} className="text-balance">
+              {t(description)}
+            </Text>
           </CardDescription>
         </CardHeader>
         <CardContent className="flex-1 flex flex-col justify-end">
+          <Text
+            variant="span"
+            locale={locale}
+            className="text-center mb-2 text-primary/80 font-semibold"
+          >
+            {t("tecnoUsed")}
+          </Text>
           <div className="flex flex-wrap gap-2">
             {tags.map((tag, index) => (
               <Badge
                 key={index}
-                variant="outline"
+                variant="secondary"
                 className="flex items-center gap-2"
               >
-                <tag.icon className="w-4 h-4" />
-                {tag.text}
+                <Iconify icon={tag.icon} className="w-4 h-4" />
+                {/* <span className="capitalize">{tag.text}</span> */}
               </Badge>
             ))}
           </div>
-          <Button className="mt-4 w-full">{t("getQuote")}</Button>
         </CardContent>
+        <CardFooter className="flex  items-center justify-center flex-col  w-full ">
+          <Link
+            href={"/"}
+            className={cn(buttonVariants({ variant: "default" }))}
+          >
+            <Text variant="h2" locale={locale} className="text-lg">
+              {t("getQuote")}
+            </Text>
+          </Link>
+        </CardFooter>
       </Card>
-    </motion.div>
+    </MotionDiv>
   );
 };
 

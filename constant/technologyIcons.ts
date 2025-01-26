@@ -31,6 +31,11 @@ import web from "@iconify/icons-tabler/world-code";
 import mobile from "@iconify/icons-tabler/device-mobile";
 import award from "@iconify/icons-tabler/award";
 import stackoverflow from "@iconify/icons-tabler/brand-stackoverflow";
+import smilyDollar from "@iconify/icons-tabler/mood-dollar";
+import custom from "@iconify/icons-tabler/focus-centered";
+import code from "@iconify/icons-tabler/code";
+import calendartime from "@iconify/icons-tabler/calendar-time";
+import shield from "@iconify/icons-tabler/shield-check";
 
 export const technology = {
   js: { name: "JavaScript", icon: js },
@@ -69,4 +74,12 @@ export const serviceIcon = {
   uiux: { name: "JavaScript", icon: paint },
   dm: { name: "JavaScript", icon: users },
   vd: { name: "JavaScript", icon: award },
+};
+
+export const whyChooseUs = {
+  dollar: smilyDollar,
+  ecustom: custom,
+  expert: code,
+  timeFlex: calendartime,
+  shield: shield,
 };

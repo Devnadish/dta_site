@@ -1,73 +1,99 @@
 import React from "react";
-import { DollarSign, Clock, Users, Calendar, Shield } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { IconifyIcon } from "@iconify/react/dist/iconify.js";
+import { Icon as Iconify } from "@iconify/react";
+import { getLocale, getTranslations } from "next-intl/server";
+import { whyChooseUs } from "@/constant/technologyIcons";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"; // ShadCN Card
+import { Badge } from "@/components/ui/badge"; // ShadCN Badge
+import MotionDiv from "@/components/MotionDiv";
+import Text from "@/components/Text";
 
 // Define the type for the feature items
 type Feature = {
-  icon: React.ReactNode; // Use React.ReactNode for Lucide icons
+  icon: IconifyIcon;
   title: string;
   description: string;
 };
 
-// List of features with Lucide icons
+// List of features
 const features: Feature[] = [
   {
-    icon: <DollarSign className="w-12 h-12 text-primary" />,
+    icon: whyChooseUs.dollar,
     title: "costEfficiencyTitle",
     description: "costEfficiencyDescription",
   },
   {
-    icon: <Clock className="w-12 h-12 text-primary" />,
+    icon: whyChooseUs.ecustom,
     title: "onDemandTitle",
     description: "onDemandDescription",
   },
   {
-    icon: <Users className="w-12 h-12 text-primary" />,
+    icon: whyChooseUs.expert,
     title: "itExpertsTitle",
     description: "itExpertsDescription",
   },
   {
-    icon: <Calendar className="w-12 h-12 text-primary" />,
+    icon: whyChooseUs.timeFlex,
     title: "timeFlexibilityTitle",
     description: "timeFlexibilityDescription",
   },
   {
-    icon: <Shield className="w-12 h-12 text-primary" />,
+    icon: whyChooseUs.shield,
     title: "securePrivacyTitle",
     description: "securePrivacyDescription",
   },
 ];
 
-const WhyChooseUs: React.FC = () => {
-  const t = useTranslations("whyChooseUs");
+const WhyChooseUs: React.FC = async () => {
+  const t = await getTranslations("whyChooseUs");
+  const locale = await getLocale();
+
   return (
-    <section id="whyChooseUs" className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section id="whyChooseUs" className="py-16 bg-muted">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <span className="text-sm font-semibold text-primary">
+        <div className="text-center mb-12">
+          <Text
+            variant="h2"
+            locale={locale}
+            className="text-4xl font-bold mb-4"
+          >
             {t("whyChooseUs")}
-          </span>
-          <h2 className="mt-2 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
+          </Text>
+          <Text
+            variant="h4"
+            locale={locale}
+            className="text-lg text-muted-foreground"
+          >
             {t("whatMakesUsDifferent")}
-          </h2>
+          </Text>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
-            <div
+            <MotionDiv
+              whileHoverEffect={{ scale: 1.05 }}
+              whileTapEffect={{ scale: 0.98 }}
               key={index}
-              className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  {t(feature.title)}
-                </h3>
-                <p className="mt-2 text-gray-600 dark:text-gray-400">
-                  {t(feature.description)}
-                </p>
-              </div>
-            </div>
+              <Card className="h-full rounded-2xl shadow-md transition-transform hover:shadow-lg">
+                <CardHeader className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    <Iconify
+                      icon={feature.icon}
+                      className="w-8 h-8 text-primary"
+                    />
+                  </div>
+                  <CardTitle className="text-xl font-semibold">
+                    {t(feature.title)}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground text-center">
+                    {t(feature.description)}
+                  </p>
+                </CardContent>
+              </Card>
+            </MotionDiv>
           ))}
         </div>
       </div>

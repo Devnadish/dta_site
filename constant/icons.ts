@@ -42,6 +42,11 @@ import emailIcon from "@iconify/icons-tabler/mail";
 import phoneIcon from "@iconify/icons-tabler/phone";
 import formIcon from "@iconify/icons-tabler/forms";
 
+import vscode from "@iconify/icons-vscode-icons/file-type-vscode2";
+import workSample from "@iconify/icons-vscode-icons/file-type-appscript";
+import priceDown from "@iconify/icons-vscode-icons/file-type-vitest";
+import linkYouLike from "@iconify/icons-vscode-icons/file-type-bolt";
+
 export const technology = {
   js: { name: "JavaScript", icon: js },
   html: { name: "HTML", icon: html },
@@ -69,6 +74,10 @@ export const technology = {
   youtube: { name: "youtube", icon: youtube },
   instgram: { name: "instgram", icon: instgram },
   twitter: { name: "tiktok", icon: twitter },
+  vscode: { name: "Technology", icon: vscode },
+  workSample: { name: "workSample", icon: workSample },
+  priceDown: { name: "price Down", icon: priceDown },
+  linkYouLike: { name: "link YouL ike", icon: linkYouLike },
 };
 
 export const serviceIcon = {

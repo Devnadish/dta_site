@@ -5,7 +5,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  useSidebar,
 } from "@/components/ui/sidebar";
 import { useTranslations } from "next-intl";
 import Text from "../Text";
@@ -21,7 +20,6 @@ export function NavContactUs({
     icon: IconifyIcon;
   }[];
 }) {
-  const { isMobile } = useSidebar();
   const t = useTranslations("navigation");
 
   return (

@@ -51,7 +51,7 @@
           "description": "An open-source database toolkit that simplifies database access for Node.js applications."
         },
         "sanity": {
-          "title": "Sanity",
+          "title": "sanity",
           "description": "Make content your competitive advantage."
         }
       }
@@ -191,53 +191,5 @@
     "timeFlexibilityDescription": "Assure a minimum of 4 hours of overlap for effective teamwork",
     "securePrivacyTitle": "Secure Privacy",
     "securePrivacyDescription": "Achieve success with NDA & ISMS certification"
-  },
-  "technologyShowcase": {
-    "title": "Technologies I Use",
-    "learnMore": "Learn More",
-    "description": {
-      "JavaScript": "A versatile scripting language for web development.",
-      "HTML": "The standard markup language for creating web pages.",
-      "CSS": "A style sheet language for designing web pages.",
-      "React": "A JavaScript library for building user interfaces.",
-      "Next_js": "A React framework for server-rendered applications.",
-      "Node_js": "A runtime environment for executing JavaScript on the server.",
-      "MongoDB": "A NoSQL database program.",
-      "Firebase": "A platform developed by Google for mobile and web applications.",
-      "ReactNative": "A framework for building native apps using React.",
-      "MySQL": "An open-source relational database management system.",
-      "Photoshop": "A graphics editing software developed by Adobe.",
-      "Illustrator": "A vector graphics editor developed by Adobe.",
-      "SQLite": "A self-contained, high-reliability, embedded SQL database engine.",
-      "TypeScript": "A strongly typed programming language that builds on JavaScript.",
-      "Prisma": "A next-generation ORM for Node.js and TypeScript.",
-      "Adobe_Xd": "A vector-based user experience design tool for web apps and mobile apps.",
-      "Figma": "A web-based vector graphics editor and prototyping tool.",
-      "Sentry": "A platform for monitoring and fixing crashes in real-time.",
-      "Twilio": "A cloud communications platform as a service.",
-      "Shopify": "A platform for building e-commerce websites."
-    },
-    "power": {
-      "JavaScript": "Essential for creating dynamic and interactive web applications.",
-      "HTML": "Forms the backbone of web content structure.",
-      "CSS": "Brings beauty and visual appeal to web designs.",
-      "React": "Empowers developers to create fast and modular front-end applications.",
-      "Next_js": "Enables server-side rendering and static site generation for enhanced performance.",
-      "Node_js": "Supports scalable and high-performance backend development.",
-      "MongoDB": "Flexible and scalable database solution for modern applications.",
-      "Firebase": "Simplifies backend development with authentication, databases, and hosting.",
-      "ReactNative": "Facilitates cross-platform mobile app development with native performance.",
-      "MySQL": "Reliable and robust database system for structured data.",
-      "Photoshop": "Industry-standard for photo editing and digital design.",
-      "Illustrator": "Perfect for creating logos, illustrations, and scalable vector art.",
-      "SQLite": "Lightweight and fast database engine for embedded systems.",
-      "TypeScript": "Enhances code quality and development experience with type safety.",
-      "Prisma": "Simplifies database access with intuitive and type-safe APIs.",
-      "Adobe_Xd": "Streamlines design and prototyping workflows for UX designers.",
-      "Figma": "Enables collaborative and cloud-based design workflows.",
-      "Sentry": "Empowers developers to debug and fix issues faster.",
-      "Twilio": "Seamlessly integrates messaging and communication APIs.",
-      "Shopify": "Simplifies e-commerce store creation and management."
-    }
   }
 }

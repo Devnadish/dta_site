@@ -41,22 +41,26 @@ export function NavMain({ locale, items = [] }: NavMainProps) {
   return (
     <SidebarGroup>
       {state !== "collapsed" && (
-        <>
-          <Text variant="h1" className="text-sm" locale={locale} cairoFont>
+        <div className="bg-gradient-blue-corporate p-2 rounded-lg">
+          <Text
+            variant="h1"
+            className="text-lg text-white"
+            locale={locale}
+            cairoFont
+          >
             {t("name")}
           </Text>
           <Text
             variant="h2"
             locale={locale}
-            className="text-xs text-muted-foreground mt-2"
+            className="text-[.9rem] text-white/70  mt-2"
             cairoFont
           >
             {t("slogan")}
           </Text>
-        </>
+        </div>
       )}
-
-      <SidebarMenu>
+      <SidebarMenu className="mt-4">
         {items.map((item, index) => (
           <Collapsible
             key={item.title + index}
@@ -84,7 +88,6 @@ export function NavMain({ locale, items = [] }: NavMainProps) {
               <CollapsibleContent>
                 <SidebarMenuSub>
                   {item.items?.map((subItem) => {
-                    console.log(subItem);
                     return (
                       <SidebarMenuSubItem key={subItem.title}>
                         <SidebarMenuSubButton asChild>

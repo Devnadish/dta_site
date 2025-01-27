@@ -15,12 +15,8 @@ import {
 } from "@/components/ui/sidebar";
 import { useTranslations } from "next-intl";
 import { Plugin } from "./Plugin";
-import {
-  contactUs,
-  serviceIcon,
-  technology,
-  whyChooseUs,
-} from "../../constant/technologyIcons";
+import { contactUs, serviceIcon, whyChooseUs } from "../../constant/icons";
+import { NavOther } from "./nav-other";
 
 // This is sample data.
 
@@ -88,120 +84,30 @@ export function AppSidebar({
           },
         ],
       },
-      {
-        title: t("technologies.title"),
-        url: "#",
-        icon: powershell,
-        items: [
-          {
-            title: t("technologies.subMenu.nextjs.title"),
-            url: "#",
-            icon: technology.nextjs.icon,
-          },
-          {
-            title: t("technologies.subMenu.nodejs.title"),
-            url: "#",
-            icon: technology.nodeJs.icon,
-          },
-          {
-            title: t("technologies.subMenu.react.title"),
-            url: "#",
-            icon: technology.react.icon,
-          },
-          {
-            title: t("technologies.subMenu.reactNative.title"),
-            url: "#",
-            icon: technology.reactNative.icon,
-          },
-          {
-            title: t("technologies.subMenu.mongoDB.title"),
-            url: "#",
-            icon: technology.mongodb.icon,
-          },
-          {
-            title: t("technologies.subMenu.firebase.title"),
-            url: "#",
-            icon: technology.firebase.icon,
-          },
-
-          {
-            title: t("technologies.subMenu.prisma.title"),
-            url: "#",
-            icon: technology.prisma.icon,
-          },
-          {
-            title: t("technologies.subMenu.sanity.title"),
-            url: "#",
-            icon: technology.sentry.icon,
-          },
-        ],
-      },
-      {
-        title: t("workSamples.title"),
-        url: "#",
-        icon: worksampleIcon,
-        items: [
-          {
-            title: t("workSamples.subMenu.webApp"),
-            url: "#",
-            icon: serviceIcon.website,
-          },
-          {
-            title: t("workSamples.subMenu.mobileApp"),
-            url: "#",
-            icon: serviceIcon.website,
-          },
-          {
-            title: t("workSamples.subMenu.uiUx"),
-            url: "#",
-            icon: serviceIcon.website,
-          },
-          {
-            title: t("workSamples.subMenu.visualIdentity"),
-            url: "#",
-            icon: serviceIcon.website,
-          },
-          {
-            title: t("workSamples.subMenu.digitalMarketing"),
-            url: "#",
-            icon: serviceIcon.website,
-          },
-          {
-            title: t("workSamples.subMenu.more"),
-            url: "#",
-            icon: serviceIcon.website,
-          },
-        ],
-      },
-      {
-        title: t("prices.title"),
-        url: "#",
-        icon: whyChooseUs.dollar,
-        items: [
-          {
-            title: t("prices.basic"),
-            url: "#",
-            icon: serviceIcon.website,
-          },
-          {
-            title: t("prices.pro"),
-            url: "#",
-            icon: serviceIcon.website,
-          },
-          {
-            title: t("prices.enterprise"),
-            url: "#",
-            icon: serviceIcon.website,
-          },
-          {
-            title: t("prices.custom"),
-            url: "#",
-            icon: serviceIcon.website,
-          },
-        ],
-      },
     ],
     contacts: [
+      {
+        name: t("contactus.whatsapp"),
+        url: "#",
+        icon: contactUs.whatsapp.icon,
+      },
+      {
+        name: t("contactus.email"),
+        url: "#",
+        icon: contactUs.email.icon,
+      },
+      {
+        name: t("contactus.phone"),
+        url: "#",
+        icon: contactUs.phone.icon,
+      },
+      {
+        name: t("contactus.form"),
+        url: "#",
+        icon: contactUs.form.icon,
+      },
+    ],
+    other: [
       {
         name: t("contactus.whatsapp"),
         url: "#",
@@ -235,6 +141,8 @@ export function AppSidebar({
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} locale={locale} />
+        <NavOther locale={locale} />
+
         <Plugin locale={locale} />
         <NavContactUs contacts={data.contacts} locale={locale} />
       </SidebarContent>

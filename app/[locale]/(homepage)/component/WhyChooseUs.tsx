@@ -2,7 +2,7 @@ import React from "react";
 import { IconifyIcon } from "@iconify/react/dist/iconify.js";
 import { Icon as Iconify } from "@iconify/react";
 import { getLocale, getTranslations } from "next-intl/server";
-import { whyChooseUs } from "@/constant/technologyIcons";
+import { whyChooseUs } from "@/constant/icons";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"; // ShadCN Card
 import { Badge } from "@/components/ui/badge"; // ShadCN Badge
 import MotionDiv from "@/components/MotionDiv";

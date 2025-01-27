@@ -11,7 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge"; // shadcn Badge
 import { buttonVariants } from "@/components/ui/button"; // shadcn Button
 import MotionDiv from "@/components/MotionDiv";
-import { serviceIcon, technology } from "@/constant/technologyIcons";
+import { serviceIcon, technology } from "@/constant/icons";
 import { Icon as Iconify, IconifyIcon } from "@iconify/react";
 import Text from "@/components/Text";
 import { getLocale, getTranslations } from "next-intl/server";

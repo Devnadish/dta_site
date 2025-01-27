@@ -11,7 +11,8 @@ cloudinary.config({
 type CloudinaryResource = {
   public_id: string; // The unique name for each image in Cloudinary
   secure_url: string; // The internet link (URL) for the image
-  [key: string]: any; // Any extra info about the image that we might not know yet
+  [key: string]: any;
+  tags?: string[]; // Any extra info about the image that we might not know yet
 };
 
 // This is the shape of a folder, which has a name and a list of images inside
@@ -92,5 +93,78 @@ export async function getFoldersWithCoverImages(
     // If something goes wrong, tell us in the logs and return an empty list
     console.error("Error fetching folder details:", error);
     return [];
+  }
+}
+
+// export async function getImagesByTagInFolder(folderPath: string, tag: string) {
+//   try {
+//     // Fetch resources with the specified prefix (folder path) and tag
+//     const response = await cloudinary.api.resources({
+//       type: "upload",
+//       prefix: folderPath,
+//       tags: true, // Ensure tags are included in the response
+//       max_results: 500,
+//     });
+
+//     // Filter resources to include only those with the specified tag
+//     const filteredResources = response.resources.filter((resource) =>
+//       resource.tags.includes(tag)
+//     );
+
+//     return filteredResources;
+//   } catch (error) {
+//     console.error("Error fetching images by tag in folder:", error);
+//     return [];
+//   }
+// }
+
+// Define the type for the optimized image data you want to return
+interface OptimizedImage {
+  public_id: string;
+  optimized_url: string;
+  tags: string[];
+}
+
+// lib/cloudinary.ts
+// lib/cloudinary.ts
+export async function getImagesFromFolder(
+  folderPath: string
+): Promise<OptimizedImage[]> {
+  try {
+    const response = await cloudinary.api.resources({
+      type: "upload",
+      prefix: folderPath,
+      max_results: 500,
+      resource_type: "image",
+    });
+
+    // Strict filtering for direct folder contents
+    const validResources = (response.resources as CloudinaryResource[]).filter(
+      (resource) =>
+        resource.public_id.startsWith(`${folderPath}/`) &&
+        (resource.format === "jpg" || resource.format === "png") &&
+        !resource.public_id.replace(`${folderPath}/`, "").includes("/")
+    );
+
+    return validResources.map((resource) => ({
+      public_id: resource.public_id,
+      optimized_url: cloudinary.url(resource.public_id, {
+        width: 400,
+        crop: "fill",
+        quality: "auto",
+        fetch_format: "auto",
+      }),
+      tags: resource.tags || [],
+    }));
+  } catch (error) {
+    console.error("Cloudinary API Error:", {
+      error: (error as Error).message,
+      folderPath,
+      envConfig: {
+        cloudName: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY ? "***" : "missing",
+      },
+    });
+    throw new Error(`Image loading failed: ${(error as Error).message}`);
   }
 }

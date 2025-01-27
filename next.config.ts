@@ -37,10 +37,7 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cdn.sanity.io",
       },
-      {
-        protocol: "https",
-        hostname: "dreamtoapp-worksample.s3.eu-north-1.amazonaws.com",
-      },
+
       {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
@@ -51,7 +48,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "**",
+        hostname: "d2yq1wt6p3tg8m.cloudfront.net",
       },
     ],
   },
@@ -60,10 +57,13 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: '/:path*',
+        source: "/:path*",
         headers: [
-          { key: 'Access-Control-Allow-Origin', value: '*' },
-          { key: 'Access-Control-Allow-Methods', value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT' },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          {
+            key: "Access-Control-Allow-Methods",
+            value: "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+          },
         ],
       },
     ];
@@ -73,8 +73,8 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        source: '/api/geo/:path*',
-        destination: 'http://ip-api.com/:path*',
+        source: "/api/geo/:path*",
+        destination: "http://ip-api.com/:path*",
       },
     ];
   },

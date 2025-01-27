@@ -1,10 +1,11 @@
-import { Icon, IconifyIcon } from "@iconify/react";
-
+import React from "react";
+import { Icon } from "@iconify/react";
 import {
   SidebarGroup,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import { useTranslations } from "next-intl";
 import Text from "../Text";
@@ -13,47 +14,59 @@ import Link from "next/link";
 
 export function NavOther({ locale }: { locale: string }) {
   const t = useTranslations("navigation");
+  const { state } = useSidebar(); // Access sidebar state
+
   const data = [
     {
       name: t("otherMenu.usedTecno"),
       url: `/${locale}/technologyshowcase`,
       icon: technology.vscode.icon,
     },
-
     {
-      name: t("otherMenu.wodkSample"),
+      name: t("otherMenu.workSample"),
       url: `/${locale}/worksample`,
       icon: technology.workSample.icon,
     },
-
     {
       name: t("otherMenu.price"),
       url: `/${locale}/packages`,
       icon: technology.priceDown.icon,
     },
   ];
+
   const title = {
     title: t("otherMenu.title"),
     icon: technology.linkYouLike.icon,
   };
 
   return (
-    <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <div className="flex items-center mb-2 ">
-        <Icon icon={title.icon} width="24" height="24" />
-        <Text variant="span" locale={locale} cairoFont>
-          {title.title}
-        </Text>
+    <SidebarGroup>
+      <div className="flex items-center mb-2">
+        {state === "expanded" && (
+          <>
+            <Icon icon={title.icon} width="24" height="24" />
+            <Text variant="span" locale={locale} cairoFont>
+              {title.title}
+            </Text>
+          </>
+        )}
       </div>
       <SidebarMenu>
         {data.map((item) => (
-          <SidebarMenuItem key={item.name} className="mr-4">
+          <SidebarMenuItem
+            key={item.name}
+            className={`${state === "expanded" ? "mr-4" : ""}`}
+          >
             <SidebarMenuButton asChild>
               <Link href={item.url}>
-                <Icon icon={item.icon} width="24" height="24" />
-                <Text variant="span" locale={locale} cairoFont>
-                  {item.name}
-                </Text>
+                <div className="flex items-center">
+                  <Icon icon={item.icon} width="24" height="24" />
+                  {state === "expanded" && (
+                    <Text variant="span" locale={locale} cairoFont>
+                      {item.name}
+                    </Text>
+                  )}
+                </div>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>

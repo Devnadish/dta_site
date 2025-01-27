@@ -13,7 +13,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={false}>
       <div
         dir={locale === "en" ? Directions.LTR : Directions.RTL}
         className="flex w-full h-screen "

@@ -1,7 +1,5 @@
 "use client";
-import powershell from "@iconify/icons-tabler/brand-powershell";
 import serviceIconQueen from "@iconify/icons-tabler/chess-queen";
-import worksampleIcon from "@iconify/icons-tabler/grid-dots";
 import { NavMain } from "@/components/naviqation/nav-main";
 import { NavContactUs } from "@/components/naviqation/nav-contactus";
 import { Dm } from "@/components/naviqation/nav-Dm";
@@ -85,50 +83,6 @@ export function AppSidebar({
         ],
       },
     ],
-    contacts: [
-      {
-        name: t("contactus.whatsapp"),
-        url: "#",
-        icon: contactUs.whatsapp.icon,
-      },
-      {
-        name: t("contactus.email"),
-        url: "#",
-        icon: contactUs.email.icon,
-      },
-      {
-        name: t("contactus.phone"),
-        url: "#",
-        icon: contactUs.phone.icon,
-      },
-      {
-        name: t("contactus.form"),
-        url: "#",
-        icon: contactUs.form.icon,
-      },
-    ],
-    other: [
-      {
-        name: t("contactus.whatsapp"),
-        url: "#",
-        icon: contactUs.whatsapp.icon,
-      },
-      {
-        name: t("contactus.email"),
-        url: "#",
-        icon: contactUs.email.icon,
-      },
-      {
-        name: t("contactus.phone"),
-        url: "#",
-        icon: contactUs.phone.icon,
-      },
-      {
-        name: t("contactus.form"),
-        url: "#",
-        icon: contactUs.form.icon,
-      },
-    ],
   };
   return (
     <Sidebar
@@ -144,7 +98,7 @@ export function AppSidebar({
         <NavOther locale={locale} />
 
         <Plugin locale={locale} />
-        <NavContactUs contacts={data.contacts} locale={locale} />
+        <NavContactUs locale={locale} />
       </SidebarContent>
       <SidebarFooter>
         <Dm user={data.user} />

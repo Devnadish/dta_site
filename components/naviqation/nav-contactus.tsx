@@ -17,22 +17,22 @@ export function NavContactUs({ locale }: { locale: string }) {
   const data = [
     {
       name: t("contactus.whatsapp"),
-      url: "https://wa.me/1234567890", // Replace with actual WhatsApp link
+      url: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}`,
       icon: contactUs.whatsapp.icon,
     },
     {
       name: t("contactus.email"),
-      url: "mailto:someone@example.com", // Replace with actual email address
+      url: `mailto:${process.env.NEXT_PUBLIC_EMAIL}`,
       icon: contactUs.email.icon,
     },
     {
       name: t("contactus.phone"),
-      url: "tel:+1234567890", // Replace with actual phone number
+      url: `tel:${process.env.NEXT_PUBLIC_PHONE_NUMBER}`,
       icon: contactUs.phone.icon,
     },
     {
       name: t("contactus.form"),
-      url: "https://example.com/contact-form", // Replace with actual form URL
+      url: "#", // Replace with your actual contact form URL
       icon: contactUs.form.icon,
     },
   ];

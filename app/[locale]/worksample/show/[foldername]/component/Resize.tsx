@@ -30,6 +30,7 @@ function Resize({ image }: { image: string }) {
           width={800}
           height={600}
           className="w-full h-full object-contain rounded-2xl"
+          sizes="(max-width: 400px) 100vw, 400px"
         />
       </DialogContent>
     </Dialog>

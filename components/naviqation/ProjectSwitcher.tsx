@@ -53,6 +53,7 @@ export function ProjectSwitcher({
                   }}
                   width={24}
                   height={24}
+                  sizes="(max-width: 400px) 100vw, 400px"
                 />
               </div>
               <div className="grid flex-1 text-left text-sm leading-tight">

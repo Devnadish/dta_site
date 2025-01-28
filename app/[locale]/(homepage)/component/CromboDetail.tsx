@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { getLocale } from "next-intl/server";
-import { Link } from "next-view-transitions";
 import {
   Card,
   CardContent,
@@ -13,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import Text from "@/components/Text";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const arDetail = {
   name: "كرمبو",
@@ -60,6 +60,7 @@ async function CromboDetail() {
               fill
               alt={"Canon Project"}
               className="object-contain object-center"
+              sizes="(max-width: 400px) 100vw, 400px"
               priority
             />
           </div>

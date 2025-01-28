@@ -32,6 +32,7 @@ export default function LangSwicher() {
         height={24}
         alt="Language Toggle"
         priority={false}
+        sizes="(max-width: 400px) 100vw, 400px"
       />
     </button>
   );

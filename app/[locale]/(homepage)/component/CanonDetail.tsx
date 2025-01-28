@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { getLocale } from "next-intl/server";
-import { Link } from "next-view-transitions";
 import {
   Card,
   CardContent,
@@ -14,6 +13,7 @@ import {
 import Text from "@/components/Text";
 import { cn } from "@/lib/utils";
 import News from "../../../../components/animation/animatNews";
+import Link from "next/link";
 
 const arDetail = {
   name: "كانون",
@@ -60,6 +60,7 @@ async function CanonDetail() {
               alt={"Canon Project"}
               className="object-contain object-center " // Ensures the image covers and is centered
               priority // Optional: Prioritize loading this image
+              sizes="(max-width: 400px) 100vw, 400px"
             />
           </div>
           <Text variant="span" locale={locale} className="text-lg">

@@ -3,16 +3,16 @@ import React from "react";
 
 function Crombo() {
   return (
-    <div className="relative flex items-center justify-center size-10">
-      <Image
-        src={"/assets/crombo.png"}
-        alt="crombo"
-        fill
-        loading="eager"
-        priority
-        className="object-contain" // Prevents stretching
-      />
-    </div>
+    <Image
+      src={"/assets/crombo.png"}
+      alt="crombo"
+      width={32} // Specify the width
+      height={32} // Specify the height
+      loading="eager"
+      priority
+      // className="object-contain" // Prevents stretching
+      sizes="(max-width: 400px) 100vw, 400px"
+    />
   );
 }
 

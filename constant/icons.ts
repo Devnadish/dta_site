@@ -46,6 +46,7 @@ import vscode from "@iconify/icons-vscode-icons/file-type-vscode2";
 import workSample from "@iconify/icons-vscode-icons/file-type-appscript";
 import priceDown from "@iconify/icons-vscode-icons/file-type-vitest";
 import linkYouLike from "@iconify/icons-vscode-icons/file-type-bolt";
+import team from "@iconify/icons-vscode-icons/file-type-janet";
 
 export const technology = {
   js: { name: "JavaScript", icon: js },
@@ -103,4 +104,8 @@ export const contactUs = {
   email: { name: "email", icon: emailIcon },
   phone: { name: "email", icon: phoneIcon },
   form: { name: "email", icon: formIcon },
+};
+
+export const normalIcons = {
+  team: { name: "Team", icon: team },
 };

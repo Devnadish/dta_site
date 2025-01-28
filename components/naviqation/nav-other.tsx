@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/sidebar";
 import { useTranslations } from "next-intl";
 import Text from "../Text";
-import { technology } from "../../constant/icons";
+import { normalIcons, technology } from "../../constant/icons";
 import Link from "next/link";
 
 export function NavOther({ locale }: { locale: string }) {
@@ -32,6 +32,11 @@ export function NavOther({ locale }: { locale: string }) {
       url: `/${locale}/packages`,
       icon: technology.priceDown.icon,
     },
+    {
+      name: t("otherMenu.team"),
+      url: `/${locale}/team`,
+      icon: normalIcons.team.icon,
+    },
   ];
 
   const title = {
@@ -52,14 +57,14 @@ export function NavOther({ locale }: { locale: string }) {
         )}
       </div>
       <SidebarMenu>
-        {data.map((item) => (
+        {data.map((item, index) => (
           <SidebarMenuItem
-            key={item.name}
+            key={item.name + index}
             className={`${state === "expanded" ? "mr-4" : ""}`}
           >
-            <SidebarMenuButton asChild>
+            <SidebarMenuButton asChild tooltip={item.name}>
               <Link href={item.url}>
-                <div className="flex items-center">
+                <div className="flex items-center gap-2">
                   <Icon icon={item.icon} width="24" height="24" />
                   {state === "expanded" && (
                     <Text variant="span" locale={locale} cairoFont>

@@ -17,8 +17,8 @@ export default async function Page({ params }: { params: Params }) {
           {foldername} Gallery
         </h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-          {images.map((image) => (
-            <ImageWithFallback image={image} />
+          {images.map((image, index) => (
+            <ImageWithFallback image={image} key={index} />
           ))}
         </div>
       </div>

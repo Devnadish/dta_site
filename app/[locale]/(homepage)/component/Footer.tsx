@@ -68,6 +68,7 @@ const Footer: React.FC = async () => {
               alt={t("footerIllustrationAlt")}
               className="w-full max-w-sm lg:max-w-md animate-bounce"
               width="380"
+              sizes="(max-width: 400px) 100vw, 400px"
               height="364"
             />
           </div>

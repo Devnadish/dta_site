@@ -3,9 +3,9 @@ import { ThemeProvider } from "@/provider/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { Directions } from "@/constant/enums";
-import { ViewTransitions } from "next-view-transitions";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
+import NextTopLoader from "nextjs-toploader";
 
 export default async function RootLayout({
   children,
@@ -16,21 +16,20 @@ export default async function RootLayout({
   const locale = await getLocale();
 
   return (
-    <ViewTransitions>
-      <html
-        lang={locale}
-        dir={locale === "en" ? Directions.LTR : Directions.RTL}
-        suppressHydrationWarning
+    <html
+      lang={locale}
+      dir={locale === "en" ? Directions.LTR : Directions.RTL}
+      suppressHydrationWarning
+    >
+      <body
+        className={`min-h-screen bg-background ${roboto.variable} ${tajawal.variable}  ${cairo.variable} antialiased`}
       >
-        <body
-          className={`min-h-screen bg-background ${roboto.variable} ${tajawal.variable}  ${cairo.variable} antialiased`}
-        >
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <ThemeProvider>{children}</ThemeProvider>
-          </NextIntlClientProvider>
-          <Toaster position="top-right" />
-        </body>
-      </html>
-    </ViewTransitions>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <NextTopLoader />
+          <ThemeProvider>{children}</ThemeProvider>
+        </NextIntlClientProvider>
+        <Toaster position="top-right" />
+      </body>
+    </html>
   );
 }

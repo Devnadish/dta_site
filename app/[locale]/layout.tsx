@@ -14,16 +14,16 @@ export default async function LocaleLayout({
 
   return (
     <SidebarProvider defaultOpen={false}>
-      <div
+      {/* <div
         dir={locale === "en" ? Directions.LTR : Directions.RTL}
         className="flex w-full h-screen "
-      >
-        <AppSidebar locale={locale} />
-        <SidebarInset>
-          <Navbar />
-          <main className="p-4">{children}</main>
-        </SidebarInset>
-      </div>
+      > */}
+      <AppSidebar locale={locale} />
+      <SidebarInset>
+        <Navbar />
+        <main className="p-4">{children}</main>
+      </SidebarInset>
+      {/* </div> */}
     </SidebarProvider>
   );
 }

@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/sidebar";
 import { useTranslations } from "next-intl";
 import { Plugin } from "./Plugin";
-import { contactUs, serviceIcon, whyChooseUs } from "../../constant/icons";
+import { serviceIcon } from "../../constant/icons";
 import { NavOther } from "./nav-other";
 
 // This is sample data.
@@ -52,17 +52,17 @@ export function AppSidebar({
         items: [
           {
             title: t("services.subMenu.webApp"),
-            url: "#",
+            url: `/${locale}/service/website`,
             icon: serviceIcon.website.icon,
           },
           {
             title: t("services.subMenu.mobileApp"),
-            url: "#",
+            url: `/${locale}/service/mobile`,
             icon: serviceIcon.mobileApp.icon,
           },
           {
             title: t("services.subMenu.ecommerce"),
-            url: "#",
+            url: `/${locale}/service/ecomm`,
             icon: serviceIcon.ecomm.icon,
           },
           {

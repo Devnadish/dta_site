@@ -1,5 +1,4 @@
 "use server";
-import { createClient } from "@sanity/client";
 import { unstable_cache } from "next/cache";
 import { Post } from "../../../sanity.types";
 import { client } from "../../../lib/sanityClient";

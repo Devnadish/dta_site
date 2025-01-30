@@ -9,9 +9,9 @@ import { getLocale } from "next-intl/server";
 export default async function BlogsHome({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const slug = params.slug;
+  const { slug } = await params;
   const { blog } = await getBlogBySlug(slug);
   const locale = await getLocale();
 

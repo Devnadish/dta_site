@@ -18,7 +18,7 @@ export const DesinAndDiscover = async () => {
   const locale = await getLocale();
   return (
     <Card className="flex flex-col justify-between gap-8 border border-primary/80">
-      <CardHeader className="p-0 ">
+      <CardHeader className="p-0 gap-8 ">
         <CardTitle className="relative h-48 sm:h-64  rounded-t-xl overflow-hidden">
           <div className="relative h-48 sm:h-64 overflow-hidden  rounded-t-xl">
             <Image
@@ -37,6 +37,7 @@ export const DesinAndDiscover = async () => {
             variant="h2"
             locale={locale}
             className="text-xl md:text-4xl text-center font-bold "
+            cairoFont
           >
             {t("discoverTitle")}
           </Text>

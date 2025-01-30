@@ -15,6 +15,7 @@
         "digitalMarketing": "استراتيجيات تسويق  فعّالة"
       }
     },
+
     "technologies": {
       "title": "التقنيات",
       "subMenu": {
@@ -135,7 +136,8 @@
     "fromIdeaButton": "ابدأ رحلتك معنا الآن!",
     "discoverTitle": "اكتشف الحلول",
     "discoverContent": "نبحث معًا عن أفضل الأفكار لتحويل رؤيتك إلى واقع. نجعل كل فكرة، مهما كانت بسيطة، نقطة انطلاق نحو النجاح.",
-    "discoverButton": "ابدأ الاستكشاف الآن"
+    "discoverButton": "ابدأ الاستكشاف الآن",
+    "slogon": "حيث تنطلق الأحلام"
   },
   "mobileAppPhases": {
     "discoveryPlanningTitle": "التخطيط والاكتشاف",

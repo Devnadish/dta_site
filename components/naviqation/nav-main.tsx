@@ -1,7 +1,7 @@
 "use client";
 import { Icon, IconifyIcon } from "@iconify/react";
 import chevrons from "@iconify/icons-tabler/chevron-down";
-
+import serviceIconQueen from "@iconify/icons-tabler/chess-queen";
 import {
   Collapsible,
   CollapsibleContent,
@@ -20,6 +20,7 @@ import {
 import { useTranslations } from "next-intl";
 import Text from "../Text";
 import Link from "next/link";
+import { serviceIcon } from "../../constant/icons";
 
 interface Item {
   title: string;
@@ -34,9 +35,59 @@ interface NavMainProps {
   items?: Item[];
 }
 
-export function NavMain({ locale, items = [] }: NavMainProps) {
+export function NavMain({ locale }: NavMainProps) {
   const t = useTranslations("app");
+  const menu = useTranslations("navigation");
   const { state } = useSidebar();
+
+  const webSlug = `/${locale}/service/category/tsmym-mwaqa-ibdaayh-tlhm-aamalk-wtmwhatk`;
+  const mobileSlug = `/${locale}/service/category/ttbyqat-mwaqa-tjma-byn-aladaa-waltkaml`;
+  const ecommSlug = `/${locale}/service/category/hlwl-mtajr-ilktrwnyh-tzyd-mbyaatk`;
+  const uiuxSlug = `/${locale}/service/category/tsmym-wajhat-wtjarb-astkhdam-mtmyzh`;
+  const vdSlug = `/${locale}/service/category/bnaa-hwyh-bsryh-taks-rwh-alamtk`;
+  const dmSlug = `/${locale}/service/category/khtt-tswyq-ilktrwnyh-mbtkrh`;
+
+  const items = [
+    {
+      title: menu("services.title"),
+      url: "#",
+      icon: serviceIconQueen,
+      isActive: true,
+      items: [
+        {
+          title: menu("services.subMenu.webApp"),
+          // url: `/${locale}/service/website`,
+          url: webSlug,
+          icon: serviceIcon.website.icon,
+        },
+        {
+          title: menu("services.subMenu.mobileApp"),
+          url: mobileSlug,
+          icon: serviceIcon.mobileApp.icon,
+        },
+        {
+          title: menu("services.subMenu.ecommerce"),
+          url: ecommSlug,
+          icon: serviceIcon.ecomm.icon,
+        },
+        {
+          title: menu("services.subMenu.uiUx"),
+          url: uiuxSlug,
+          icon: serviceIcon.uiux.icon,
+        },
+        {
+          title: menu("services.subMenu.visualIdentity"),
+          url: vdSlug,
+          icon: serviceIcon.vd.icon,
+        },
+        {
+          title: menu("services.subMenu.digitalMarketing"),
+          url: dmSlug,
+          icon: serviceIcon.dm.icon,
+        },
+      ],
+    },
+  ];
 
   return (
     <SidebarGroup>

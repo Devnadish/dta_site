@@ -144,7 +144,8 @@
     "maintenanceUpdatesTitle": "Maintenance & Updates",
     "maintenanceUpdatesDescription": "Provide ongoing support, fix issues, and release updates to keep the app relevant and functional.",
     "userFeedbackIterationTitle": "User Feedback & Iteration",
-    "userFeedbackIterationDescription": "Gather user feedback and iterate on the app to improve features and user experience."
+    "userFeedbackIterationDescription": "Gather user feedback and iterate on the app to improve features and user experience.",
+    "slogon": "Where Dreams Begin"
   },
   "footer": {
     "readyToTransform": "Ready to Transform Your Business?",
@@ -217,6 +218,7 @@
       "Twilio": "A cloud communications platform as a service.",
       "Shopify": "A platform for building e-commerce websites."
     },
+
     "power": {
       "JavaScript": "Essential for creating dynamic and interactive web applications.",
       "HTML": "Forms the backbone of web content structure.",

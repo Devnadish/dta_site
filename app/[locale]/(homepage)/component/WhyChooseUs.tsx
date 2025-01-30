@@ -49,13 +49,14 @@ const WhyChooseUs: React.FC = async () => {
   const locale = await getLocale();
 
   return (
-    <section id="whyChooseUs" className="py-16 bg-muted">
+    <section id="whyChooseUs" className="py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Text
             variant="h2"
             locale={locale}
             className="text-4xl font-bold mb-4"
+            cairoFont
           >
             {t("whyChooseUs")}
           </Text>
@@ -75,7 +76,7 @@ const WhyChooseUs: React.FC = async () => {
               whileTapEffect={{ scale: 0.98 }}
               key={index}
             >
-              <Card className="h-full rounded-2xl shadow-md transition-transform hover:shadow-lg">
+              <Card className="h-full rounded-2xl shadow-md transition-transform hover:shadow-lg drop-shadow-lg">
                 <CardHeader className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                     <Iconify
@@ -83,14 +84,25 @@ const WhyChooseUs: React.FC = async () => {
                       className="w-8 h-8 text-primary"
                     />
                   </div>
-                  <CardTitle className="text-xl font-semibold">
-                    {t(feature.title)}
+                  <CardTitle>
+                    <Text
+                      variant="p"
+                      locale={locale}
+                      className="text-lg text-muted-foreground "
+                      cairoFont
+                    >
+                      {t(feature.title)}
+                    </Text>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground text-center">
+                  <Text
+                    variant="p"
+                    locale={locale}
+                    className="  text-muted-foreground "
+                  >
                     {t(feature.description)}
-                  </p>
+                  </Text>
                 </CardContent>
               </Card>
             </MotionDiv>

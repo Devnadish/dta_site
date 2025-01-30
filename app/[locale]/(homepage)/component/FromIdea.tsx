@@ -17,8 +17,8 @@ export const FromIdea = async () => {
   const t = await getTranslations("homepage");
   const locale = await getLocale();
   return (
-    <Card className="flex flex-col justify-between gap-8 border border-primary/80">
-      <CardHeader className="p-0 ">
+    <Card className="flex flex-col justify-between gap-12 border border-primary/80">
+      <CardHeader className="p-0 gap-8">
         <CardTitle className="relative h-48 sm:h-64  rounded-t-xl overflow-hidden">
           <div className="relative h-48 sm:h-64 overflow-hidden  rounded-t-xl">
             <Image
@@ -37,6 +37,7 @@ export const FromIdea = async () => {
             variant="h2"
             locale={locale}
             className="text-xl md:text-4xl text-center font-bold "
+            cairoFont
           >
             {t("fromIdeaTitle")}
           </Text>
@@ -47,7 +48,7 @@ export const FromIdea = async () => {
           {t("fromIdeaContent")}
         </Text>
       </CardContent>
-      <CardFooter className="flex w-full items-center justify-between">
+      {/* <CardFooter className="flex w-full items-center justify-between">
         <Link
           href={"/"}
           className={cn(
@@ -64,7 +65,7 @@ export const FromIdea = async () => {
             {t("fromIdeaButton")}
           </Text>
         </Link>
-      </CardFooter>
+      </CardFooter> */}
     </Card>
   );
 };

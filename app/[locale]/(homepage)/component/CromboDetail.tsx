@@ -20,8 +20,8 @@ const arDetail = {
   description:
     "مع كرمبو، اجعل تجربة عملائك لا تُنسى! نظام ذكي يتيح لك استقبال الاستفسارات، معالجة الشكاوى، والاستفادة من الاقتراحات بسهولة واحترافية. يضمن كرمبو تواصلاً فوريًا وبناء علاقة ثقة طويلة الأمد مع عملائك، مما يجعل عملك أقرب إليهم وأكثر نجاحًا.",
 
-  action: "ابدأ الآن وحقق تجربة عملاء لا تُنسى!",
-  free: "جرّب مجانًا الآن!",
+  action: "ابدأ ولا تفقد عميلًا بعد اليوم!",
+  free: "🚀 جرّب مجانًا الآن ولا تفوّت الفرصة! ",
 };
 
 const enDetail = {
@@ -37,15 +37,20 @@ async function CromboDetail() {
   const locale = await getLocale();
 
   return (
-    <Card className="flex items-center justify-between flex-col bg-gradient-blue-modern dark:bg-gradient-custom border border-white/70 ">
+    <Card className="flex items-center justify-between flex-col bg-gradient-blue-modern dark:bg-gradient-custom border border-white/70 max-w-4xl mx-auto">
       <CardHeader>
         <CardTitle className="flex flex-col items-center gap-4 ">
-          <Text variant="p" locale={locale} className="text-xl font-bold">
+          <Text
+            variant="p"
+            locale={locale}
+            className="text-xl font-bold"
+            cairoFont
+          >
             {locale === "ar" ? arDetail.name : enDetail.name}
           </Text>
         </CardTitle>
         <CardDescription>
-          <Text variant="p" locale={locale} className="text-lg ">
+          <Text variant="p" locale={locale} cairoFont>
             {locale === "ar" ? arDetail.title : enDetail.title}
           </Text>
         </CardDescription>
@@ -64,17 +69,16 @@ async function CromboDetail() {
               priority
             />
           </div>
-          {/* Text Content */}
           <Text variant="span" locale={locale} className="text-lg leading-6">
             {locale === "ar" ? arDetail.description : enDetail.description}
-            <span className="text-destructive font-bold animate-pulse bg-slate-300 px-2 rounded ">
-              {arDetail.free}
-            </span>
           </Text>
         </div>
       </CardContent>
 
       <CardFooter className="flex  items-center justify-center flex-col  w-full ">
+        <span className="font-bold animate-pulse   rounded ">
+          {arDetail.free}
+        </span>
         <Link
           href={"/"}
           className={cn(

@@ -41,12 +41,14 @@ import shield from "@iconify/icons-tabler/shield-check";
 import emailIcon from "@iconify/icons-tabler/mail";
 import phoneIcon from "@iconify/icons-tabler/phone";
 import formIcon from "@iconify/icons-tabler/forms";
+import whatsappBW from "@iconify/icons-tabler/brand-whatsapp";
 
 import vscode from "@iconify/icons-vscode-icons/file-type-vscode2";
 import workSample from "@iconify/icons-vscode-icons/file-type-appscript";
 import priceDown from "@iconify/icons-vscode-icons/file-type-vitest";
 import linkYouLike from "@iconify/icons-vscode-icons/file-type-bolt";
 import team from "@iconify/icons-vscode-icons/file-type-janet";
+import tk from "@iconify/icons-simple-icons/tiktok";
 
 export const technology = {
   js: { name: "JavaScript", icon: js },
@@ -100,10 +102,15 @@ export const whyChooseUs = {
 };
 
 export const contactUs = {
-  whatsapp: { name: "whatsapp", icon: whatsapp },
+  whatsapp: { name: "whatsapp", icon: whatsappBW },
   email: { name: "email", icon: emailIcon },
   phone: { name: "email", icon: phoneIcon },
   form: { name: "email", icon: formIcon },
+  tiktok: { name: "tiktok", icon: tk },
+  snapchat: { name: "snapchat", icon: snapchat },
+  youtube: { name: "youtube", icon: youtube },
+  instgram: { name: "instgram", icon: instgram },
+  twitter: { name: "tiktok", icon: twitter },
 };
 
 export const normalIcons = {

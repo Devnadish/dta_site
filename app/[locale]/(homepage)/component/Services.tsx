@@ -130,7 +130,7 @@ const Services = async () => {
   const t = await getTranslations("services");
   const locale = await getLocale();
   return (
-    <div className="min-h-screen bg-muted py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen   flex py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <Text
@@ -174,7 +174,7 @@ const CardComponent = ({
       whileHoverEffect={{ scale: 0.9, rotate: 5 }}
       whileTapEffect={{ scale: 0.9, rotate: -5 }}
     >
-      <Card className="h-full flex flex-col min-w-[300px]">
+      <Card className="h-full flex flex-col min-w-[300px] md:min-w-[200px] drop-shadow-lg">
         <CardHeader className="flex flex-col items-center text-center">
           <CardTitle className="flex flex-col items-center gap-2 text-xl font-bold ">
             <Iconify icon={icon} className="w-12 h-12" />
@@ -187,7 +187,7 @@ const CardComponent = ({
               {t(title)}
             </Text>
           </CardTitle>
-          <CardDescription className="mt-2 text-muted-foreground">
+          <CardDescription className="mt-2 text-muted-foreground ">
             <Text variant="p" locale={locale} className="text-balance">
               {t(description)}
             </Text>

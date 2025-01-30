@@ -1,111 +1,177 @@
-import React from "react";
-import { Mail, Phone, MessageCircle } from "lucide-react";
-import { getLocale, getTranslations } from "next-intl/server";
-import Text from "../../../../components/Text";
+"use client";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Image from "next/image";
+import dreamtoapp from "@/public/assets/dta.svg";
+import { useLocale, useTranslations } from "next-intl";
+import Link from "next/link";
+import { cn } from "../../../../lib/utils";
+import Text from "../../../../components/Text";
+import { buttonVariants } from "../../../../components/ui/button";
+import { Icon } from "@iconify/react";
+import backgroundImg from "@/public/assets/homepage/footer.webp";
+import { contactUs, technology } from "../../../../constant/icons";
 
-const Footer: React.FC = async () => {
-  const t = await getTranslations("footer");
-  const locale = await getLocale();
+// Define types for contact items
+type ContactItem = {
+  title: string;
+  icon: any;
+  link: string;
+};
 
-  const phoneNumber = "+966502699023";
-  const emailAddress = "info@dreamto.app";
+// Contact and Social Media Component
+const ContactAndSocialMedia: React.FC = () => {
+  const contact: ContactItem[] = [
+    {
+      title: "WhatsApp",
+      icon: contactUs.whatsapp.icon, // Replace with your actual iconify icon
+      link: "https://wa.me/",
+    },
+    {
+      title: "Contact Form",
+      icon: contactUs.form.icon, // Replace with your actual iconify icon
+      link: "#contact-form",
+    },
+    {
+      title: "Instagram",
+      icon: technology.instgram.icon, // Replace with your actual iconify icon
+      link: "https://instagram.com",
+    },
+    {
+      title: "TikTok",
+      icon: contactUs.tiktok.icon, // Replace with your actual iconify icon
+      link: "https://tiktok.com",
+    },
+    {
+      title: "YouTube",
+      icon: technology.youtube.icon, // Replace with your actual iconify icon
+      link: "https://youtube.com",
+    },
+    {
+      title: "Snapchat",
+      icon: technology.snapchat.icon, // Replace with your actual iconify icon
+      link: "https://snapchat.com",
+    },
+  ];
 
   return (
-    <footer className="bg-gray-950 text-white py-16">
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          {/* Left Section - Text and CTA */}
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <Text
-              variant="h3"
-              locale={locale}
-              className="text-5xl md:text-3xl font-extrabold mb-4"
-            >
-              {t("readyToTransform")}
-            </Text>
-            <Text
-              variant="p"
-              locale={locale}
-              className="text-lg text-gray-400 mb-8 text-center"
-            >
-              {t("buildSomethingGreat")}
-            </Text>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a
-                href={`mailto:${emailAddress}`}
-                className="bg-white text-gray-950 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-300 flex items-center justify-center gap-2 shadow-md"
-              >
-                <Mail className="w-5 h-5" />
+    <div className="mt-6 flex justify-between gap-6 z-50  p-2 mb-4 rounded-lg">
+      {contact.map((item, index) => (
+        <div
+          key={index}
+          className="w-12 h-12  rounded-full flex items-center justify-center text-primary shadow-md"
+        >
+          <a href={item.link} target="_blank" rel="noopener noreferrer">
+            <Icon icon={item.icon} className="w-6 h-6 " />
+          </a>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+// Footer Component
+const Footer: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations("homepage");
+  const locale = useLocale();
+
+  const footer = useTranslations("footer");
+
+  // Scroll-based animations
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"], // Trigger animations as the footer enters and exits the viewport
+  });
+
+  // Transformations for zoom and opacity
+  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1.2]); // Zoom in as you scroll up
+  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]); // Fade in as you scroll up
+
+  return (
+    <div>
+      <motion.footer
+        ref={containerRef}
+        className="relative text-white py-12 overflow-hidden rounded-xl shadow-lg"
+        style={{
+          scale, // Apply zoom effect
+          opacity, // Apply fade effect
+        }}
+      >
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src={backgroundImg}
+            alt="Background Image"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-15"></div>
+        </div>
+
+        {/* Content */}
+        <div className="container mx-auto text-center relative z-10">
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center justify-center">
+              <div className="text-center lg:text-left">
+                <Text
+                  variant="h3"
+                  locale={locale}
+                  className="text-3xl font-extrabold mb-4"
+                  cairoFont
+                >
+                  {footer("readyToTransform")}
+                </Text>
                 <Text
                   variant="p"
                   locale={locale}
-                  className="text-lg text-center"
+                  className="text-xl text-gray-100 mb-8 text-center"
+                  cairoFont
                 >
-                  {t("getInTouch")}
+                  {footer("buildSomethingGreat")}
                 </Text>
-              </a>
-              <a
-                href={`tel:${phoneNumber}`}
-                className="border border-white text-white px-8 py-2 rounded-full font-semibold hover:bg-white hover:text-gray-950 transition-colors duration-300 flex items-center justify-center gap-2 shadow-md"
+              </div>
+              <div className="bg-white rounded-full w-[150px] h-[150px] flex items-center justify-center shadow-md">
+                <Image
+                  src={dreamtoapp}
+                  alt="Dream To App"
+                  width={140}
+                  height={120}
+                  priority
+                  className="object-contain"
+                />
+              </div>
+            </div>
+            <Text
+              variant="h2"
+              locale={locale}
+              className="text-3xl font-bold text-purple-500 drop-shadow-md"
+              cairoFont
+            >
+              {t("slogon")}
+            </Text>
+            <h2 className="text-3xl font-bold text-purple-500 drop-shadow-md"></h2>
+            <div className="mt-6">
+              <Link
+                href="/"
+                className={cn(
+                  buttonVariants({ variant: "default" }),
+                  "bg-gradient-to-r from-pink-500 to-blue-500 text-white transform transition shadow-2xl drop-shadow-2xl animate-pulse rounded-2xl "
+                )}
               >
-                <Phone className="w-5 h-5" />
-                <Text
-                  variant="p"
-                  locale={locale}
-                  className="text-lg text-center"
-                >
-                  {t("callUsNow")}
+                <Text variant="h2" locale={locale} className="text-lg">
+                  {t("fromIdeaButton")}
                 </Text>
-              </a>
+              </Link>
             </div>
           </div>
 
-          {/* Right Section - Image */}
-          <div className="lg:w-1/2 flex justify-center lg:justify-end">
-            <Image
-              src="https://d2yq1wt6p3tg8m.cloudfront.net/assets/images/new-landing/footer-g.png"
-              alt={t("footerIllustrationAlt")}
-              className="w-full max-w-sm lg:max-w-md animate-bounce"
-              width="380"
-              sizes="(max-width: 400px) 100vw, 400px"
-              height="364"
-            />
-          </div>
+          {/* Contact and Social Media Section */}
         </div>
-
-        {/* Additional Contact Options */}
-        <div className="mt-16 border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <MessageCircle className="w-6 h-6 text-primary" />
-            <a
-              href={`mailto:${emailAddress}`}
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              {t("chatWithUs")}
-            </a>
-          </div>
-          <div className="flex items-center gap-4">
-            <Phone className="w-6 h-6 text-primary" />
-            <a
-              href={`tel:${phoneNumber}`}
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              {phoneNumber}
-            </a>
-          </div>
-          <div className="flex items-center gap-4">
-            <Mail className="w-6 h-6 text-primary" />
-            <a
-              href={`mailto:${emailAddress}`}
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              {emailAddress}
-            </a>
-          </div>
-        </div>
-      </section>
-    </footer>
+      </motion.footer>
+      <ContactAndSocialMedia />
+    </div>
   );
 };
 

@@ -9,14 +9,12 @@ import {
   CardFooter,
 } from "@/components/ui/card"; // shadcn Card
 import { Badge } from "@/components/ui/badge"; // shadcn Badge
-import { buttonVariants } from "@/components/ui/button"; // shadcn Button
 import MotionDiv from "@/components/MotionDiv";
 import { serviceIcon, technology } from "@/constant/icons";
 import { Icon as Iconify, IconifyIcon } from "@iconify/react";
 import Text from "@/components/Text";
 import { getLocale, getTranslations } from "next-intl/server";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { InlineQuery } from "../../../../components/InlineQuery/InlineQuery";
 
 // Define the card data type
 type CardData = {
@@ -171,8 +169,8 @@ const CardComponent = ({
 }: CardData) => {
   return (
     <MotionDiv
-      whileHoverEffect={{ scale: 0.9, rotate: 5 }}
-      whileTapEffect={{ scale: 0.9, rotate: -5 }}
+      whileHoverEffect={{ scale: 0.9, rotate: 1 }}
+      whileTapEffect={{ scale: 0.9, rotate: -1 }}
     >
       <Card className="h-full flex flex-col min-w-[300px] md:min-w-[200px] drop-shadow-lg">
         <CardHeader className="flex flex-col items-center text-center">
@@ -215,19 +213,7 @@ const CardComponent = ({
           </div>
         </CardContent>
         <CardFooter className="flex  items-center justify-center flex-col  w-full ">
-          <Link
-            href={"/"}
-            className={cn(buttonVariants({ variant: "default" }))}
-          >
-            <Text
-              variant="h2"
-              locale={locale}
-              className="text-lg font-cairo"
-              cairoFont
-            >
-              {t("getQuote")}
-            </Text>
-          </Link>
+          <InlineQuery btnTitle={t("getQuote")} title={t(title)} />
         </CardFooter>
       </Card>
     </MotionDiv>

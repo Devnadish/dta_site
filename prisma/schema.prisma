@@ -1,0 +1,46 @@
+generator client {
+  provider        = "prisma-client-js"
+  // previewFeatures = ["prismaSchemaFolder"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model contactus {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String
+  mobile    String
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model expressQuery {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  brief     String
+  mobile    String
+  createdAt DateTime @default(now())
+}
+
+
+// model User {
+//   id               String          @id @default(auto()) @map("_id") @db.ObjectId
+//   name             String?
+//   email            String?         @unique
+//   mobile           String?         @default("")
+//   emailVerified    DateTime?
+//   image            String?
+   
+//   subscriptionType String?         @default("free")
+//   initailBalance   Int?            @default(10)
+//   usedBalance      Int?            @default(0)
+//   mobileVerified   Boolean         @default(false)
+//   ip               String?
+//   country          String? // Added country field
+//   city             String?
+//   createdAt        DateTime        @default(now())
+//   updatedAt        DateTime        @updatedAt
+// }

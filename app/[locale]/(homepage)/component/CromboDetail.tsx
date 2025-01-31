@@ -80,7 +80,7 @@ async function CromboDetail() {
           {arDetail.free}
         </span>
         <Link
-          href={"/"}
+          href={`/${locale}/crombo`}
           className={cn(
             buttonVariants({ variant: "default" }),
             "bg-white text-black text-lg hover:bg-white/90  "

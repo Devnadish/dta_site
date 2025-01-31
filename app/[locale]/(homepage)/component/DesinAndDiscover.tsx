@@ -13,6 +13,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { InlineQuery } from "../../../../components/InlineQuery/InlineQuery";
 export const DesinAndDiscover = async () => {
   const t = await getTranslations("homepage");
   const locale = await getLocale();
@@ -44,13 +45,43 @@ export const DesinAndDiscover = async () => {
         </CardDescription>
       </CardHeader>
 
-      <CardContent>
+      <CardContent className="flex items-center flex-col gap-4">
+        <Text
+          variant="p"
+          locale={locale}
+          className="text-lg md:text-xl text-center font-bold "
+          // cairoFont
+        >
+          {t("discoverTitle1")}
+        </Text>
+        <Text
+          variant="p"
+          locale={locale}
+          className="text-lg md:text-xl text-center font-bold "
+          // cairoFont
+        >
+          {t("discoverTitle2")}
+        </Text>
+        <Text
+          variant="p"
+          locale={locale}
+          className="text-lg md:text-3xl text-center font-bold "
+          // cairoFont
+        >
+          {t("discoverTitle3")}
+        </Text>
+      </CardContent>
+      <CardFooter className="flex w-full items-center justify-center flex-col">
+        <InlineQuery
+          btnTitle={t("discoverButton")}
+          title={t("discoverDilogTitle")}
+          subtitle={t("discoverDilog")}
+          description={t("discoverDilog1")}
+        />
         <Text variant="p" locale={locale} className="text-pretty">
           {t("discoverContent")}
         </Text>
-      </CardContent>
-      <CardFooter className="flex w-full items-center justify-between">
-        <Link
+        {/* <Link
           href={"/"}
           className={cn(
             buttonVariants({ variant: "default" }),
@@ -65,7 +96,7 @@ export const DesinAndDiscover = async () => {
           >
             {t("discoverButton")}
           </Text>
-        </Link>
+        </Link> */}
       </CardFooter>
     </Card>
   );

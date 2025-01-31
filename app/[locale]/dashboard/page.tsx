@@ -1,55 +1,190 @@
-import { AppSidebar } from "@/components/naviqation/app-sidebar";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
-import { getLocale } from "next-intl/server";
+// pages/dashboard.tsx
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"; // ShadCN Card components
+import { Button } from "@/components/ui/button"; // ShadCN Button component
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"; // ShadCN Tabs components
+import { Badge } from "@/components/ui/badge"; // ShadCN Badge component
+import { getContactUsData } from "./action/action"; // Import the refactored server action
 
-export default async function Page() {
-  const locale = await getLocale();
-  console.log("side khalid nadish");
+// Define types for each model (corrected for visitor data)
+type ContactUs = {
+  id: string;
+  name: string;
+  email: string;
+  mobile: string;
+  message: string;
+  createdAt: Date; // updated to Date
+};
+
+type ExpressQuery = {
+  id: string;
+  name: string;
+  brief: string;
+  mobile: string;
+  createdAt: Date; // updated to Date
+};
+
+type Visitor = {
+  id: string;
+  createdAt: Date; // updated to Date
+  ip: string | null; // Optional field from Prisma schema
+  country: string | null; // Optional field from Prisma schema
+  city: string | null; // Optional field from Prisma schema
+  updatedAt: Date; // updated to Date
+};
+
+export default async function Dashboard() {
+  // Fetch data using the server action
+  const { contacts, expressQuery, visitors } = await getContactUsData();
+
   return (
-    <SidebarProvider>
-      <AppSidebar locale={locale} />
-      <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-          <div className="flex items-center gap-2 px-4">
-            <SidebarTrigger className="-ml-1" />
-            <Separator orientation="vertical" className="mr-2 h-4" />
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
-                    Building Your Application
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-          </div>
-        </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-          </div>
-          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
-        </div>
-      </SidebarInset>
-    </SidebarProvider>
+    <div className="container mx-auto p-8">
+      <h1 className="text-3xl font-semibold mb-6">Admin Dashboard</h1>
+
+      {/* Tabs Section */}
+      <Tabs defaultValue="contact-us">
+        <TabsList>
+          <TabsTrigger value="contact-us">
+            Contact Us
+            <Badge className="ml-2" variant="secondary">
+              {contacts.length}
+            </Badge>
+          </TabsTrigger>
+          <TabsTrigger value="express-queries">
+            Express Queries
+            <Badge className="ml-2" variant="secondary">
+              {expressQuery.length}
+            </Badge>
+          </TabsTrigger>
+          <TabsTrigger value="visitors">
+            Visitors
+            <Badge className="ml-2" variant="secondary">
+              {visitors.length}
+            </Badge>
+          </TabsTrigger>
+        </TabsList>
+
+        {/* Contact Us Tab */}
+        <TabsContent value="contact-us">
+          <section className="mb-8">
+            <h2 className="text-2xl font-medium mb-4">
+              Contact Us Submissions
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {contacts.map((item: ContactUs) => (
+                <Card
+                  key={item.id}
+                  className="shadow-lg border border-gray-200 rounded-lg"
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg font-semibold">
+                      {item.name}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-sm">
+                      <p>
+                        <strong>Email:</strong> {item.email}
+                      </p>
+                      <p>
+                        <strong>Mobile:</strong> {item.mobile}
+                      </p>
+                      <p>
+                        <strong>Message:</strong> {item.message}
+                      </p>
+                      <p className="mt-2 text-xs text-gray-500">
+                        <strong>Date:</strong>{" "}
+                        {new Date(item.createdAt).toLocaleString()}
+                      </p>
+                    </div>
+                    <Button className="mt-4" variant="outline" size="sm">
+                      View More
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+        </TabsContent>
+
+        {/* Express Queries Tab */}
+        <TabsContent value="express-queries">
+          <section>
+            <h2 className="text-2xl font-medium mb-4">Express Queries</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {expressQuery.map((item: ExpressQuery) => (
+                <Card
+                  key={item.id}
+                  className="shadow-lg border border-gray-200 rounded-lg"
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg font-semibold">
+                      {item.name}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-sm">
+                      <p>
+                        <strong>Mobile:</strong> {item.mobile}
+                      </p>
+                      <p>
+                        <strong>Brief:</strong> {item.brief}
+                      </p>
+                      <p className="mt-2 text-xs text-gray-500">
+                        <strong>Date:</strong>{" "}
+                        {new Date(item.createdAt).toLocaleString()}
+                      </p>
+                    </div>
+                    <Button className="mt-4" variant="outline" size="sm">
+                      View More
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+        </TabsContent>
+
+        {/* Visitors Tab */}
+        <TabsContent value="visitors">
+          <section>
+            <h2 className="text-2xl font-medium mb-4">Visitors</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {visitors.map((item: Visitor) => (
+                <Card
+                  key={item.id}
+                  className="shadow-lg border border-gray-200 rounded-lg"
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg font-semibold">
+                      {item.ip || "Unknown IP"}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-sm">
+                      <p>
+                        <strong>IP:</strong> {item.ip || "N/A"}
+                      </p>
+                      <p>
+                        <strong>Country:</strong> {item.country || "N/A"}
+                      </p>
+                      <p>
+                        <strong>City:</strong> {item.city || "N/A"}
+                      </p>
+                      <p className="mt-2 text-xs text-gray-500">
+                        <strong>Visit Time:</strong>{" "}
+                        {new Date(item.createdAt).toLocaleString()}
+                      </p>
+                    </div>
+                    <Button className="mt-4" variant="outline" size="sm">
+                      View More
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+        </TabsContent>
+      </Tabs>
+    </div>
   );
 }

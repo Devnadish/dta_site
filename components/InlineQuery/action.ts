@@ -1,6 +1,7 @@
 "use server";
 import { z } from "zod";
 import db from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 
 const formSchema = z.object({
   name: z
@@ -60,7 +61,7 @@ export async function submitForm(
 
     const message = `${data.type} :\nName: ${data.name}\nMobile: ${data.mobile}\nBrief: ${data.brief}`;
     await sendWhatsAppMessage(message);
-
+    revalidatePath("/dashboard");
     return {
       success: true,
       message: "Form submitted successfully! WhatsApp notification sent.",

@@ -41,11 +41,18 @@ export default function FormData({
     }
   }, [state.errors]); // Trigger when errors change
 
+  // Show success message after form submission
+  useEffect(() => {
+    if (state.success) {
+      toast.success(state.message || "Form submitted successfully!"); // Show success toast
+    }
+  }, [state.success, state.message]); // Trigger when form submission is successful
+
   return (
-    <Card className="w-full mx-auto shadow-lg p-6 rounded-xl border border-gray-200 bg-white">
+    <Card className="w-full mx-auto shadow-lg p-6 rounded-xl border border-gray-200 bg-white overflow-auto">
       <CardContent>
         <form action={action} className="grid gap-6">
-          {/* type  Field */}
+          {/* Type Field */}
           <Input id="type" name="type" type="hidden" defaultValue={type} />
           {/* Name Field */}
           <div className="grid gap-2">

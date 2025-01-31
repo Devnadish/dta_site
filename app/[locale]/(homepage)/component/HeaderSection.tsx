@@ -28,8 +28,8 @@ const CareerBlock = () => {
   const textY = useTransform(scrollYProgress, [0.3, 0.5], ["100%", "0%"]);
 
   return (
-    <div ref={containerRef} className="relative h-[200vh]">
-      <div className="sticky top-0 h-screen overflow-hidden">
+    <div ref={containerRef} className="relative h-[200vh] p-2">
+      <div className="sticky top-0 h-screen overflow-hidden  ">
         {/* Image Section */}
         <motion.div
           className="absolute inset-0 w-full h-full"
@@ -39,7 +39,7 @@ const CareerBlock = () => {
             opacity: imageOpacity,
           }}
         >
-          <div className="w-full h-full flex items-center justify-center flex-col gap-4 bg-gray-300 rounded-2xl">
+          <div className="w-full h-full flex items-center justify-center flex-col gap-4 bg-gray-200 rounded-2xl">
             <div className="relative w-[400px] h-[400px]">
               <Image
                 src="/assets/dta.svg"

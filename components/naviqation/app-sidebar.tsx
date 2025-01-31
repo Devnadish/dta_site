@@ -1,5 +1,4 @@
 "use client";
-import serviceIconQueen from "@iconify/icons-tabler/chess-queen";
 import { NavMain } from "@/components/naviqation/nav-main";
 import { NavContactUs } from "@/components/naviqation/nav-contactus";
 import { Dm } from "@/components/naviqation/nav-Dm";
@@ -13,10 +12,7 @@ import {
 } from "@/components/ui/sidebar";
 import { useTranslations } from "next-intl";
 import { Plugin } from "./Plugin";
-import { serviceIcon } from "../../constant/icons";
 import { NavOther } from "./nav-other";
-
-// This is sample data.
 
 export function AppSidebar({
   locale,
@@ -53,14 +49,15 @@ export function AppSidebar({
       <SidebarHeader>
         <ProjectSwitcher projectsLink={data.projectsLink} />
       </SidebarHeader>
+
       <SidebarContent>
-        {/* <NavMain items={data.navMain} locale={locale} /> */}
         <NavMain locale={locale} />
         <NavOther locale={locale} />
 
         <Plugin locale={locale} />
         <NavContactUs locale={locale} />
       </SidebarContent>
+
       <SidebarFooter>
         <Dm user={data.user} />
       </SidebarFooter>

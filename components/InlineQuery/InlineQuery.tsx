@@ -35,7 +35,7 @@ export function InlineQuery({
           {btnTitle}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] bg-gray-50 border border-gray-200 shadow-lg rounded-lg">
+      <DialogContent className="sm:max-w-[425px] bg-gray-50 border border-gray-200 shadow-lg rounded-lg max-h-screen">
         <DialogHeader className="flex flex-col items-center justify-center space-y-2">
           <DialogTitle className="bg-gradient-to-r from-blue-500 to-green-500 py-3 px-6 rounded-lg text-white font-bold shadow-md">
             {title}

@@ -1,5 +1,5 @@
 "use client";
-import { Icon, IconifyIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import chevrons from "@iconify/icons-tabler/chevron-down";
 import serviceIconQueen from "@iconify/icons-tabler/chess-queen";
 import {

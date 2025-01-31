@@ -1,18 +1,18 @@
 {
   "app": {
     "name": "Dream to App",
-    "slogan": "We turn your dreams into reality"
+    "slogan": "Turning your ideas into tangible reality"
   },
   "navigation": {
     "services": {
       "title": "Our Services",
       "subMenu": {
-        "webApp": "Web App Development",
-        "mobileApp": "Mobile App Development",
+        "webApp": "Web Development",
+        "mobileApp": "Mobile Applications",
         "ecommerce": "E-commerce Solutions",
-        "uiUx": "User Interface Design",
-        "visualIdentity": "Visual Identity",
-        "digitalMarketing": "Digital Marketing"
+        "uiUx": "Attractive UI Design",
+        "visualIdentity": "Building a Unique Visual Identity",
+        "digitalMarketing": "Effective Marketing Strategies"
       }
     },
     "technologies": {
@@ -20,226 +20,243 @@
       "subMenu": {
         "nextjs": {
           "title": "Next.js",
-          "description": "A powerful framework for building server-rendered React applications, enabling fast and optimized web apps."
+          "description": "An advanced framework for quickly creating high-performance React websites."
         },
         "nodejs": {
           "title": "Node.js",
-          "description": "A JavaScript runtime that allows for building scalable network applications, perfect for backend services."
+          "description": "A powerful platform for developing scalable backend services."
         },
         "react": {
           "title": "React",
-          "description": "A popular JavaScript library for creating interactive user interfaces with reusable components."
+          "description": "The best library for building interactive and easy user interfaces."
         },
         "reactNative": {
           "title": "React Native",
-          "description": "A framework for building mobile applications using React, enabling native apps for iOS and Android."
+          "description": "Create native mobile applications for iOS and Android using a single technology."
         },
         "mongoDB": {
           "title": "MongoDB",
-          "description": "A NoSQL database that stores data in flexible, JSON-like documents, designed for scalability."
+          "description": "A flexible database for storing your data efficiently and securely."
         },
         "firebase": {
           "title": "Firebase",
-          "description": "A platform by Google for building mobile and web apps, offering tools for real-time databases and authentication."
+          "description": "Integrated tools for app development including real-time databases and authentication."
         },
         "aws": {
           "title": "AWS",
-          "description": "A comprehensive cloud computing platform that provides a wide range of services for hosting applications."
+          "description": "Reliable cloud services for easily and securely hosting your applications."
         },
         "prisma": {
           "title": "Prisma",
-          "description": "An open-source database toolkit that simplifies database access for Node.js applications."
+          "description": "A modern tool for managing databases in an easy and efficient way."
         },
         "sanity": {
           "title": "Sanity",
-          "description": "Make content your competitive advantage."
+          "description": "Make your website's content a unique competitive advantage."
         }
       }
     },
     "workSamples": {
-      "title": "Work Samples",
+      "title": "Our Work",
       "subMenu": {
-        "webApp": "Web App",
-        "mobileApp": "Mobile App",
-        "uiUx": "UI/UX Design",
-        "visualIdentity": "Visual Identity",
-        "digitalMarketing": "Digital Marketing",
-        "more": "More"
+        "webApp": "Web Applications",
+        "mobileApp": "Mobile Applications",
+        "uiUx": "User Interface Designs",
+        "visualIdentity": "Visual Identity Designs",
+        "digitalMarketing": "Digital Marketing Campaigns",
+        "more": "Other Projects"
       }
     },
     "prices": {
-      "title": "Prices",
-      "basic": "Basic",
-      "pro": "Pro",
-      "enterprise": "Enterprise",
-      "custom": "Custom"
+      "title": "Pricing Plans",
+      "basic": "Basic Plan",
+      "pro": "Professional Plan",
+      "enterprise": "Enterprise Plan",
+      "custom": "Custom Offer"
     },
     "contactus": {
       "title": "Contact Us",
-      "whatsapp": "WhatsApp",
-      "email": "Email",
-      "phone": "Phone",
-      "form": "Contact Form"
+      "whatsapp": "Message us on WhatsApp",
+      "email": "Send an Email",
+      "phone": "Call Us Directly",
+      "form": "Fill out the Contact Form"
+    },
+    "otherMenu": {
+      "title": "Useful Links",
+      "usedTecno": "Technologies Used",
+      "workSample": "Samples of Our Work",
+      "price": "Competitive Prices",
+      "team": "Our Team"
     },
     "plugin": {
-      "title": "Plugin",
+      "title": "Plugins",
       "crombo": "Crombo",
-      "latestnews": "Latest News"
+      "latestnews": "Conan"
     }
   },
   "buttons": {
     "showMore": "Show More",
     "showLess": "Show Less",
-    "showGallery": "Show Gallery",
-    "details": "Details",
-    "sending": "Sending...",
-    "more": "More Details"
+    "showGallery": "Browse Gallery",
+    "details": "View Details",
+    "sending": "Sending now...",
+    "more": "Read More"
   },
   "login": {
     "login": "Login",
-    "register": "Register",
-    "loginHint": "Login please",
-    "mustLogin": "You must login to add a question"
+    "register": "Create Account",
+    "loginHint": "Please log in to benefit from our services",
+    "mustLogin": "Please log in to ask your question"
   },
   "contactUsPage": {
     "pageTitle": "Contact Us",
-    "hint": "Correct information is required to help us respond as quickly as possible, providing the best possible service.",
+    "hint": "Please provide accurate information to enable us to serve you quickly and efficiently.",
     "mobile": "Mobile Number",
-    "mobilePlaceholder": "10-digit mobile number",
-    "mobileValidationError": "Must be at least 10 digits",
+    "mobilePlaceholder": "Enter a 10-digit number",
+    "mobileValidationError": "The number must be at least 10 digits",
     "email": "Email",
     "emailPlaceholder": "example@example.com",
-    "emailValidationError": "Invalid email",
+    "emailValidationError": "Please enter a valid email address",
     "message": "Message",
-    "messagePlaceholder": "How can we help you?",
-    "messageValidationError": "The minimum is 10 characters",
-    "sendButton": "Send .. We are waiting for you",
+    "messagePlaceholder": "How can we assist you?",
+    "messageValidationError": "The message must contain at least 10 characters",
+    "sendButton": "Send Your Message Now",
     "name": "Name"
   },
   "notFound": {
     "title": "404",
-    "message": "Page Not Found",
-    "description": "The page you are looking for is not found",
-    "button": "Home Page"
+    "message": "Sorry, the page does not exist",
+    "description": "The page you are looking for is currently unavailable.",
+    "button": "Return to Home Page"
   },
   "homepage": {
-    "fromIdeaTitle": "From idea to digital solutions",
-    "fromIdeaContent": "We turn bold ideas into powerful digital solutions that captivate users and transform businesses. From concept to launch, we craft innovative products that people love and businesses can’t live without. By blending creativity, cutting-edge technology, and strategic vision, we create experiences that stand out, scale fast, and deliver real results. When you’re ready to disrupt, grow, and lead, we’re here to make it happen.",
-    "fromIdeaButton": "Let’s bring your vision to life. Get started today!",
-    "discoverTitle": "Discover & Define",
-    "discoverContent": "Together, we dive deep into understanding the problem, uncovering hidden opportunities, and generating impactful ideas. No vision is too ambitious—every big idea starts with a simple prototype. By validating concepts early, we ensure that our direction is aligned with your goals and user needs. This stage sets the foundation for creating solutions that are not only innovative but also practical and effective.",
-    "discoverButton": "Ready to explore? Let’s get started!"
+    "fromIdeaTitle": "From Idea to Successful Digital Product",
+    "fromIdeaContent": "We transform your bold ideas into unique digital solutions that attract customers and drive your business to success. By combining creativity and technology, we deliver innovative products that achieve tangible results.",
+    "fromIdeaButton": "Start Your Journey with Us Now!",
+    "discoverTitle": "Start with a Small Step",
+    "discoverTitle1": "Don't wait for perfection. Taking action is the most important step",
+    "discoverTitle2": "Even if your start is modest, experience will teach you a lot",
+    "discoverTitle3": "Don't let fear stop you! Start your journey today and get a free guide to the first steps.",
+    "discoverContent": "Example: If you want to write a book, start by writing one page a day.",
+    "discoverButton": "Start Your Success for Free",
+    "slogon": "Where Dreams Take Off",
+    "discoverDilog": "You may face challenges, but resilience is the key to overcoming them.",
+    "discoverDilog1": "Keep trying and learn from every failure.",
+    "discoverDilogTitle": "Success Journey",
+    "webDilogTitle": "Success Journey",
+    "mobileDilogTitle": "Success Journey",
+    "crmDilogTitle": "Success Journey",
+    "ecommDilogTitle": "Success Journey",
+    "uiDilogTitle": "Success Journey"
   },
   "mobileAppPhases": {
-    "discoveryPlanningTitle": "Discovery & Planning",
-    "discoveryPlanningDescription": "Define project goals, target audience, and requirements. Create a roadmap and wireframes.",
-    "uiUxDesignTitle": "UI/UX Design",
-    "uiUxDesignDescription": "Design intuitive and user-friendly interfaces. Create prototypes and gather feedback.",
+    "discoveryPlanningTitle": "Planning and Discovery",
+    "discoveryPlanningDescription": "We understand your needs and create a clear plan for your project.",
+    "uiUxDesignTitle": "Attractive and Easy Design",
+    "uiUxDesignDescription": "We design beautiful and user-friendly interfaces.",
     "developmentTitle": "Development",
-    "developmentDescription": "Build the mobile application using modern frameworks and technologies. Ensure scalability and performance.",
-    "testingQATitle": "Testing & QA",
-    "testingQADescription": "Conduct rigorous testing to identify and fix bugs. Ensure the app meets quality standards.",
+    "developmentDescription": "We build an advanced application with the latest technologies to ensure high performance.",
+    "testingQATitle": "Testing and Quality Assurance",
+    "testingQADescription": "We ensure the application is error-free and meets all standards.",
     "deploymentTitle": "Deployment",
-    "deploymentDescription": "Launch the app on app stores (Google Play, Apple App Store). Ensure smooth deployment and monitoring.",
-    "maintenanceUpdatesTitle": "Maintenance & Updates",
-    "maintenanceUpdatesDescription": "Provide ongoing support, fix issues, and release updates to keep the app relevant and functional.",
-    "userFeedbackIterationTitle": "User Feedback & Iteration",
-    "userFeedbackIterationDescription": "Gather user feedback and iterate on the app to improve features and user experience.",
-    "slogon": "Where Dreams Begin"
+    "deploymentDescription": "A smooth launch of your application on app stores.",
+    "maintenanceUpdatesTitle": "Support and Updates",
+    "maintenanceUpdatesDescription": "Ongoing support to enhance your application and keep it outstanding.",
+    "userFeedbackIterationTitle": "Improvement Based on User Feedback",
+    "userFeedbackIterationDescription": "We listen to user feedback to continuously improve your application."
   },
   "footer": {
-    "readyToTransform": "Ready to Transform Your Business?",
-    "buildSomethingGreat": "Let’s Build Something Great Together",
-    "getInTouch": "Get in Touch",
-    "callUsNow": "Call Us Now",
-    "footerIllustrationAlt": "Footer Illustration",
-    "chatWithUs": "Chat with us for instant support",
+    "readyToTransform": "Are you ready to turn your idea into reality?",
+    "buildSomethingGreat": "Let's build something amazing together",
+    "getInTouch": "Contact us today",
+    "callUsNow": "Call us now for a free consultation",
+    "footerIllustrationAlt": "Illustration reflecting our collaboration",
+    "chatWithUs": "Chat with us now for support",
     "phoneNumber": "+1 (123) 456-7890",
     "emailAddress": "info@yourcompany.com"
   },
   "services": {
-    "tecnoUsed": "Innovative technologies for your needs",
-    "buildingTomorrow": "Building Tomorrow’s",
-    "solutions": "Solutions",
-    "today": "Today",
-    "blendingCreativity": "Blending creativity and technology to craft bespoke strategies for your needs.",
+    "tecnoUsed": "Innovative technologies that meet your needs",
+    "buildingTomorrow": "We innovate future solutions",
+    "solutions": "Innovative Solutions",
+    "today": "For Today's Achievements",
+    "blendingCreativity": "We combine creativity and technology to provide customized solutions for your business.",
     "websiteDevelopmentTitle": "Website Development",
-    "websiteDevelopmentDescription": "Transform your online presence with custom websites designed to captivate and convert.",
-    "mobileAppDevelopmentTitle": "Mobile App Development",
-    "mobileAppDevelopmentDescription": "Empowering businesses with innovative, user-friendly mobile apps for iOS and Android.",
-    "crmDevelopmentTitle": "CRM Development",
-    "crmDevelopmentDescription": "Streamline operations and enhance customer engagement with tailored CRM solutions.",
-    "ecommerceDevelopmentTitle": "E-Commerce Development",
-    "ecommerceDevelopmentDescription": "Create seamless, sales-driven online stores that enhance customer experience and boost revenue.",
-    "uiUxDesignTitle": "UI/UX Design",
-    "uiUxDesignDescription": "Craft intuitive and visually stunning user interfaces that deliver exceptional user experiences.",
+    "websiteDevelopmentDescription": "We turn your ideas into exceptional websites that impress visitors and engage them with your brand. Our websites are not only visually appealing but also designed to be fast and responsive, ensuring a pleasant and comfortable user experience that converts visitors into loyal customers.",
+    "mobileAppDevelopmentTitle": "Mobile Applications",
+    "mobileAppDevelopmentDescription": "We create innovative and user-friendly applications that allow your clients to access your services easily anytime and anywhere. Whether you need business or entertainment applications, we ensure a distinctive design filled with features that increase customer engagement with your brand.",
+    "crmDevelopmentTitle": "CRM Systems",
+    "crmDevelopmentDescription": "We provide advanced systems for managing customer relationships, helping you organize their data, track their needs, and deliver personalized services that enhance their loyalty. With our smart tools, you can provide an ideal customer experience and increase their loyalty in the long run.",
+    "ecommerceDevelopmentTitle": "E-commerce Stores",
+    "ecommerceDevelopmentDescription": "We build a complete online store that reflects your brand identity and facilitates the buying and selling process. We offer modern designs, secure payment gateways, and a unique shopping experience that helps you increase your sales and reach a wider audience.",
+    "uiUxDesignTitle": "User Interface Designs",
+    "uiUxDesignDescription": "We provide innovative modern designs that focus on user experience, making every interaction with your website or application enjoyable and seamless. We study customer behavior to deliver designs that meet their needs and enhance their connection with your services.",
     "digitalMarketingTitle": "Digital Marketing",
-    "digitalMarketingDescription": "Boost your online presence with data-driven digital marketing strategies tailored to your business goals.",
+    "digitalMarketingDescription": "We position your brand at the forefront of competition through integrated marketing strategies. We use the latest methods such as paid advertising and search engine optimization to ensure your brand reaches the right audience and achieves tangible results.",
     "visualIdentityTitle": "Visual Identity",
-    "visualIdentityDescription": "Create a cohesive and memorable brand identity that resonates with your audience.",
-    "getQuote": "Get a Quote"
+    "visualIdentityDescription": "We create a unique visual identity that reflects your brand's personality and makes it memorable to your audience. From choosing colors and logos to designing promotional materials, we ensure that your identity is unique and strong, enhancing your distinctiveness.",
+    "getQuote": "High discounts, don't hesitate..."
   },
   "whyChooseUs": {
-    "whyChooseUs": "WHY CHOOSE US",
-    "whatMakesUsDifferent": "What makes us Different?",
-    "costEfficiencyTitle": "Cost-Efficiency",
-    "costEfficiencyDescription": "Derive up to 30% business savings with our competitive offerings",
-    "onDemandTitle": "On Demand",
-    "onDemandDescription": "Choose the best fit remote team as your business demands",
-    "itExpertsTitle": "20+ IT experts",
-    "itExpertsDescription": "Scale up with engineers skilled across various technologies",
+    "whyChooseUs": "Why Are We the Best?",
+    "whatMakesUsDifferent": "What Sets Us Apart?",
+    "costEfficiencyTitle": "Competitive Prices",
+    "costEfficiencyDescription": "Invest in our smart solutions and reduce your operational costs by up to 30% without compromising on quality. With our services, you can direct your budget towards achieving your goals and confidently expanding your business.",
+    "onDemandTitle": "Customized Services",
+    "onDemandDescription": "Choose the ideal team that matches your project's needs and goals. We offer services specifically designed to meet your unique requirements, ensuring you achieve superior results that meet and exceed your expectations.",
+    "itExpertsTitle": "Technical Experts",
+    "itExpertsDescription": "Rely on our team of elite experts in the technical field. We provide you with specialized expertise in the latest technologies to ensure innovative solutions that contribute to the development of your business and achieve the desired success.",
     "timeFlexibilityTitle": "Time Flexibility",
-    "timeFlexibilityDescription": "Assure a minimum of 4 hours of overlap for effective teamwork",
-    "securePrivacyTitle": "Secure Privacy",
-    "securePrivacyDescription": "Achieve success with NDA & ISMS certification"
+    "timeFlexibilityDescription": "We understand the importance of time for you. Therefore, we offer flexible work schedules that fit your needs and project timelines, ensuring efficient delivery of work on time.",
+    "securePrivacyTitle": "Security and Privacy",
+    "securePrivacyDescription": "Your privacy and data security are our top priorities. We provide advanced security technologies to ensure the protection of your sensitive information and maintain the confidentiality of your project at all times."
   },
   "technologyShowcase": {
-    "title": "Technologies I Use",
+    "title": "The Technologies We Use",
     "learnMore": "Learn More",
     "description": {
-      "JavaScript": "A versatile scripting language for web development.",
-      "HTML": "The standard markup language for creating web pages.",
-      "CSS": "A style sheet language for designing web pages.",
-      "React": "A JavaScript library for building user interfaces.",
-      "Next_js": "A React framework for server-rendered applications.",
-      "Node_js": "A runtime environment for executing JavaScript on the server.",
-      "MongoDB": "A NoSQL database program.",
-      "Firebase": "A platform developed by Google for mobile and web applications.",
-      "ReactNative": "A framework for building native apps using React.",
-      "MySQL": "An open-source relational database management system.",
-      "Photoshop": "A graphics editing software developed by Adobe.",
-      "Illustrator": "A vector graphics editor developed by Adobe.",
-      "SQLite": "A self-contained, high-reliability, embedded SQL database engine.",
-      "TypeScript": "A strongly typed programming language that builds on JavaScript.",
-      "Prisma": "A next-generation ORM for Node.js and TypeScript.",
-      "Adobe_Xd": "A vector-based user experience design tool for web apps and mobile apps.",
-      "Figma": "A web-based vector graphics editor and prototyping tool.",
-      "Sentry": "A platform for monitoring and fixing crashes in real-time.",
-      "Twilio": "A cloud communications platform as a service.",
-      "Shopify": "A platform for building e-commerce websites."
+      "JavaScript": "A powerful and flexible programming language used to develop dynamic and interactive web applications. It is the backbone of many platforms like YouTube and Google Docs.",
+      "HTML": "The foundation upon which web pages are built, providing the basic structure for content on the internet. It is used in all sites like Wikipedia and LinkedIn.",
+      "CSS": "Adds beauty and styling to web pages, making designs more attractive and smooth. It is used to enhance the interfaces of sites like Instagram and Airbnb.",
+      "React": "A JavaScript library for building fast and efficient user interfaces. It is used by sites like Facebook and Netflix to deliver a unique user experience.",
+      "Next_js": "A framework based on React that allows the creation of high-performance sites with server-side rendering and static page generation. It is used in sites like Vercel and TikTok.",
+      "Node_js": "A runtime environment that enables the use of JavaScript on the server, ideal for scalable applications like PayPal and LinkedIn.",
+      "MongoDB": "A NoSQL database used to store unstructured data efficiently. It is relied upon in applications like Uber and eBay.",
+      "Firebase": "A comprehensive platform for app development that includes databases, authentication, and hosting. It is used by applications like Duolingo and Alibaba.",
+      "ReactNative": "A framework for building native mobile applications using React, used to create applications like Instagram and Uber Eats.",
+      "MySQL": "A reliable and powerful relational database management system, used in large sites like Twitter and WordPress.",
+      "Photoshop": "The leading global image editing tool, used to create creative designs and famous brands like Nike and Coca-Cola.",
+      "Illustrator": "A graphic design tool dedicated to creating logos and vector graphics. It is used by professionals in all creative fields.",
+      "SQLite": "A lightweight embedded database engine, ideal for small applications like mobile systems.",
+      "TypeScript": "A programming language based on JavaScript that adds type safety for large projects. It is used in developing enterprise applications like Microsoft Teams.",
+      "Prisma": "An ORM tool that simplifies database access, providing clear and easy-to-use APIs. It is used in modern and advanced projects.",
+      "Adobe_Xd": "An advanced design tool for creating prototypes and user experiences. It is relied upon in designing large applications and websites.",
+      "Figma": "A cloud-based collaborative design platform used to create designs and prototypes. It is relied upon by design teams at Slack and Zoom.",
+      "Sentry": "A platform for monitoring and fixing errors in real time, used by large applications like GitHub and Airbnb to improve performance.",
+      "Twilio": "A cloud communication service that facilitates the integration of text messaging and voice calls. It is used in platforms like WhatsApp and Lyft.",
+      "Shopify": "An integrated platform for creating and managing e-commerce stores easily and professionally. It is used by global stores like Gymshark and Allbirds."
     },
-
     "power": {
-      "JavaScript": "Essential for creating dynamic and interactive web applications.",
-      "HTML": "Forms the backbone of web content structure.",
-      "CSS": "Brings beauty and visual appeal to web designs.",
-      "React": "Empowers developers to create fast and modular front-end applications.",
-      "Next_js": "Enables server-side rendering and static site generation for enhanced performance.",
-      "Node_js": "Supports scalable and high-performance backend development.",
-      "MongoDB": "Flexible and scalable database solution for modern applications.",
-      "Firebase": "Simplifies backend development with authentication, databases, and hosting.",
-      "ReactNative": "Facilitates cross-platform mobile app development with native performance.",
-      "MySQL": "Reliable and robust database system for structured data.",
-      "Photoshop": "Industry-standard for photo editing and digital design.",
-      "Illustrator": "Perfect for creating logos, illustrations, and scalable vector art.",
-      "SQLite": "Lightweight and fast database engine for embedded systems.",
-      "TypeScript": "Enhances code quality and development experience with type safety.",
-      "Prisma": "Simplifies database access with intuitive and type-safe APIs.",
-      "Adobe_Xd": "Streamlines design and prototyping workflows for UX designers.",
-      "Figma": "Enables collaborative and cloud-based design workflows.",
-      "Sentry": "Empowers developers to debug and fix issues faster.",
-      "Twilio": "Seamlessly integrates messaging and communication APIs.",
-      "Shopify": "Simplifies e-commerce store creation and management."
+      "JavaScript": "An indispensable language for web development, supporting the creation of innovative and responsive applications.",
+      "HTML": "The backbone of every website, making content organized and easy to navigate.",
+      "CSS": "Adds beauty and appeal to web pages, significantly enhancing the user experience.",
+      "React": "Provides dynamic solutions for user interfaces, enhancing the speed and performance of applications.",
+      "Next_js": "Makes sites ultra-fast and high-performing using the latest web technologies.",
+      "Node_js": "Provides a reliable infrastructure for developing large and diverse server applications.",
+      "MongoDB": "Allows flexible and scalable data storage.",
+      "Firebase": "Helps speed up application development time with multiple integrated tools.",
+      "ReactNative": "Combines the power of native applications with the ease of web development.",
+      "MySQL": "Efficiently manages large amounts of data with stability.",
+      "Photoshop": "Offers unlimited possibilities for high-quality creative designs.",
+      "Illustrator": "Features precision and flexibility for creating innovative and unique designs.",
+      "SQLite": "Provides fast and reliable data storage for small applications.",
+      "TypeScript": "Enhances code safety and helps catch errors before execution.",
+      "Prisma": "Simplifies working with databases in a modern and easy way.",
+      "Adobe_Xd": "Provides comprehensive design tools for a unique user experience.",
+      "Figma": "Supports real-time online collaboration for creating professional designs.",
+      "Sentry": "Detects errors and improves application performance in real time.",
+      "Twilio": "Provides innovative and advanced communication solutions for mobile and web applications.",
+      "Shopify": "Helps store owners reach global markets with flexibility and speed."
     }
   }
 }

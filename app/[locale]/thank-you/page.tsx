@@ -5,9 +5,15 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Icon } from "@iconify/react";
+import { useLocale } from "next-intl";
 
 export default function ThankYouPage() {
   const router = useRouter();
+  const locale = useLocale();
+  const gohome = () => {
+    router.push(`/${locale}`);
+    router.refresh();
+  };
 
   return (
     <motion.div
@@ -30,7 +36,7 @@ export default function ThankYouPage() {
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
-                onClick={() => router.push("/")}
+                onClick={gohome}
                 className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg"
               >
                 Return to Home

@@ -23,7 +23,7 @@ export function AppSidebar({
     user: {
       name: "Social Media",
       email: "Devnadish@gmail.com",
-      avatar: "/assets/logo.webp",
+      avatar: "/assets/dta.svg",
     },
     projectsLink: [
       {
@@ -47,7 +47,7 @@ export function AppSidebar({
       side={locale === "ar" ? "right" : "left"}
     >
       <SidebarHeader>
-        <ProjectSwitcher projectsLink={data.projectsLink} />
+        <Dm user={data.user} />
       </SidebarHeader>
 
       <SidebarContent>
@@ -59,7 +59,7 @@ export function AppSidebar({
       </SidebarContent>
 
       <SidebarFooter>
-        <Dm user={data.user} />
+        <ProjectSwitcher projectsLink={data.projectsLink} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

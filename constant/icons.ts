@@ -42,6 +42,7 @@ import emailIcon from "@iconify/icons-tabler/mail";
 import phoneIcon from "@iconify/icons-tabler/phone";
 import formIcon from "@iconify/icons-tabler/forms";
 import whatsappBW from "@iconify/icons-tabler/brand-whatsapp";
+import home from "@iconify/icons-tabler/smart-home";
 
 import vscode from "@iconify/icons-vscode-icons/file-type-vscode2";
 import workSample from "@iconify/icons-vscode-icons/file-type-appscript";
@@ -115,4 +116,5 @@ export const contactUs = {
 
 export const normalIcons = {
   team: { name: "Team", icon: team },
+  home: { name: "Team", icon: home },
 };

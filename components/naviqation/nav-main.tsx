@@ -1,7 +1,7 @@
 "use client";
 import { Icon } from "@iconify/react";
 import chevrons from "@iconify/icons-tabler/chevron-down";
-import serviceIconQueen from "@iconify/icons-tabler/chess-queen";
+
 import {
   Collapsible,
   CollapsibleContent,
@@ -20,7 +20,7 @@ import {
 import { useTranslations } from "next-intl";
 import Text from "../Text";
 import Link from "next/link";
-import { serviceIcon } from "../../constant/icons";
+import { serviceIcon, whyChooseUs } from "../../constant/icons";
 
 interface Item {
   title: string;
@@ -51,7 +51,7 @@ export function NavMain({ locale }: NavMainProps) {
     {
       title: menu("services.title"),
       url: "#",
-      icon: serviceIconQueen,
+      icon: whyChooseUs.expert,
       isActive: true,
       items: [
         {

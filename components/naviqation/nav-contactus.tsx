@@ -32,7 +32,7 @@ export function NavContactUs({ locale }: { locale: string }) {
     },
     {
       name: t("contactus.form"),
-      url: "#", // Replace with your actual contact form URL
+      url: `/${locale}/contactus`, // Replace with your actual contact form URL
       icon: contactUs.form.icon,
     },
   ];

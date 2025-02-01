@@ -30,7 +30,7 @@ export default function LangSwitcher() {
 
   if (!mounted) {
     return (
-      <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-200">
+      <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100">
         {/* Loader Spinner */}
         <svg
           className="animate-spin h-5 w-5 text-gray-600"
@@ -59,16 +59,16 @@ export default function LangSwitcher() {
   const currentLanguage = languageData[locale as keyof typeof languageData];
 
   return (
-    <div className="flex items-center gap-2 sm:gap-3 bg-gray-100 p-2 rounded-lg shadow-md">
+    <div className="flex items-center gap-2 sm:gap-3  px-1 rounded-lg  ">
       <button
         onClick={switchLanguage}
-        className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-transparent hover:border-gray-400 hover:shadow-sm transition-all duration-300"
+        className="flex items-center justify-center w-6 h-6   rounded-full overflow-hidden border border-transparent hover:border-gray-400 hover:shadow-sm transition-all duration-300"
         aria-label={`Switch to ${locale === "ar" ? "English" : "Arabic"}`}
       >
         <Image
           src={currentLanguage.image}
-          width={32}
-          height={32}
+          width={24}
+          height={24}
           alt={currentLanguage.label}
           className="rounded-full"
         />
@@ -93,7 +93,7 @@ function ThemeToggle() {
 
   return (
     <button
-      className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-all duration-300"
+      className="flex items-center justify-center w-6 h-6   rounded-full bg-gray-100 hover:bg-gray-300 transition-all duration-300"
       onClick={toggleTheme}
       aria-label="Toggle theme"
     >

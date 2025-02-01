@@ -258,5 +258,25 @@
       "Twilio": "Provides innovative and advanced communication solutions for mobile and web applications.",
       "Shopify": "Helps store owners reach global markets with flexibility and speed."
     }
+  },
+  "contactus": {
+    "pagetitle": "Contact Us",
+    "hint": "Correct information is required to help us respond as quickly as possible, providing the best possible service.",
+
+    "mobile": "Mobile Number",
+    "mobilePlaceHolder": "10-digit mobile number",
+    "mobileValidationError": "Must be at least 10 digits",
+
+    "email": "Email",
+    "emailPlaceHolder": "example@example.com",
+    "emailValidationError": "Invalid email",
+
+    "msg": "Message",
+    "msgplaceHolder": "How can we help you?",
+    "msgValidationError": "The minimum is 10 characters",
+    "sendBtn": "Send .. We are waiting for you",
+    "name": "Name",
+    "Done": "Done",
+    "doneMsg": "Thank you for your message. We will get back to you soon."
   }
 }

@@ -30,7 +30,7 @@ export function InlineQuery({
       <DialogTrigger asChild>
         <Button
           variant="default"
-          className="font-cairo w-1/2 bg-blue-600 hover:bg-blue-700 text-white"
+          className="font-cairo w-full bg-blue-600 hover:bg-blue-700 text-white"
         >
           {btnTitle}
         </Button>

@@ -278,5 +278,42 @@
     "name": "Name",
     "Done": "Done",
     "doneMsg": "Thank you for your message. We will get back to you soon."
+  },
+  "LaunchPage": {
+    "offerEndsIn": "Offer ends in",
+    "title": "🚀 Elevate Customer Service with Crombo!",
+    "description": "An intelligent platform that makes communicating with your customers easier and more professional.",
+    "companyLabel": "Company Name",
+    "companyPlaceholder": "Enter your company name",
+    "companyError": "Company name must be more than two characters",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Enter your full name",
+    "nameError": "Name must be more than two characters",
+    "mobileLabel": "Phone Number",
+    "mobilePlaceholder": "Enter your phone number",
+    "mobileError": "Phone number must be at least 10 digits",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "emailError": "Please enter a valid email address",
+    "noteLabel": "Notes (optional)",
+    "notePlaceholder": "Any additional notes?",
+    "submitButton": "🚀 Get Your Free Version Now",
+    "submitting": "Submitting...",
+    "successMessage": "✅ Your data has been successfully submitted!",
+    "errorMessage": "❌ An error occurred, please try again!",
+    "submitErrorMessage": "❌ An error occurred during submission!",
+    "privacyNotice": "By registering, you agree to our Terms of Service and Privacy Policy.",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "loading": "Loading..."
+  },
+  "crombo": {
+    "name": "Crombo",
+    "title": "Effortless and Comprehensive Customer Service",
+    "description": "Transform your customer experience with Crombo! Seamlessly manage inquiries, resolve complaints, and embrace feedback with a smart platform designed to bring your business closer to your customers.",
+    "action": "Get started",
+    "free": "🚀 Try for Free Now!"
   }
 }

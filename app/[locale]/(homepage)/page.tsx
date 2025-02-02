@@ -1,8 +1,11 @@
 import HomePageBody from "./component/HomePageBody";
 import CromboDetail from "./component/CromboDetail";
 import CareerBlock from "./component/HeaderSection";
+import { getIpInfo } from "../../../lib/actions/getIp";
 
-export default function Page() {
+export default async function Page() {
+  const ipInfo = await getIpInfo();
+  console.log(ipInfo);
   return (
     <div className="flex  flex-col gap-4   " id="mainpage">
       <CareerBlock />

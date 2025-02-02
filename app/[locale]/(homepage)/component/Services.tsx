@@ -1,5 +1,4 @@
 import React from "react";
-// Import Lucide Icons
 import {
   Card,
   CardHeader,
@@ -20,8 +19,6 @@ import { InlineQuery } from "../../../../components/InlineQuery/InlineQuery";
 type CardData = {
   title: string;
   description: string;
-  locale?: string;
-  t?: any;
   icon: IconifyIcon; // Lucide icon component
   tags: { text: string; icon: IconifyIcon }[]; // Tags with Lucide icons
 };
@@ -106,7 +103,6 @@ const cardData: CardData[] = [
       { text: technology.illustrator.name, icon: technology.illustrator.icon },
       { text: technology.buffer.name, icon: technology.buffer.icon },
       { text: technology.tiktok.name, icon: technology.tiktok.icon },
-      { text: technology.tiktok.name, icon: technology.tiktok.icon },
       { text: technology.snapchat.name, icon: technology.snapchat.icon },
       { text: technology.youtube.name, icon: technology.youtube.icon },
       { text: technology.instgram.name, icon: technology.instgram.icon },
@@ -127,10 +123,12 @@ const cardData: CardData[] = [
 const Services = async () => {
   const t = await getTranslations("services");
   const locale = await getLocale();
+
   return (
-    <div className="min-h-screen   flex py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center">
+        {/* Header Section */}
+        <div className="text-center mb-12">
           <Text
             variant="h2"
             locale={locale}
@@ -148,9 +146,11 @@ const Services = async () => {
             {t("blendingCreativity")}
           </Text>
         </div>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {cardData.map((card, index) => (
-            <CardComponent key={index} {...card} t={t} />
+            <CardComponent key={index} {...card} t={t} locale={locale} />
           ))}
         </div>
       </div>
@@ -166,16 +166,17 @@ const CardComponent = ({
   tags,
   t,
   locale,
-}: CardData) => {
+}: CardData & { t: any; locale: string }) => {
   return (
     <MotionDiv
-      whileHoverEffect={{ scale: 0.9, rotate: 1 }}
-      whileTapEffect={{ scale: 0.9, rotate: -1 }}
+      whileHoverEffect={{ scale: 1.05 }}
+      whileTapEffect={{ scale: 0.95 }}
     >
-      <Card className="h-full flex flex-col min-w-[300px] md:min-w-[200px] drop-shadow-lg">
-        <CardHeader className="flex flex-col items-center text-center">
-          <CardTitle className="flex flex-col items-center gap-2 text-xl font-bold ">
-            <Iconify icon={icon} className="w-12 h-12" />
+      <Card className="h-full flex flex-col min-w-[300px] md:min-w-[300px] drop-shadow-lg transition-transform hover:shadow-xl">
+        {/* Header */}
+        <CardHeader className="flex flex-col items-center text-center space-y-2">
+          <Iconify icon={icon} className="w-12 h-12 text-primary" />
+          <CardTitle className="text-xl font-bold">
             <Text
               variant="h3"
               locale={locale}
@@ -185,12 +186,14 @@ const CardComponent = ({
               {t(title)}
             </Text>
           </CardTitle>
-          <CardDescription className="mt-2 text-muted-foreground ">
+          <CardDescription className="text-muted-foreground">
             <Text variant="p" locale={locale} className="text-balance">
               {t(description)}
             </Text>
           </CardDescription>
         </CardHeader>
+
+        {/* Content */}
         <CardContent className="flex-1 flex flex-col justify-end">
           <Text
             variant="span"
@@ -204,15 +207,17 @@ const CardComponent = ({
               <Badge
                 key={index}
                 variant="secondary"
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 text-sm"
               >
                 <Iconify icon={tag.icon} className="w-4 h-4" />
-                {/* <span className="capitalize">{tag.text}</span> */}
+                <span className="capitalize">{tag.text}</span>
               </Badge>
             ))}
           </div>
         </CardContent>
-        <CardFooter className="flex  items-center justify-center flex-col  w-full ">
+
+        {/* Footer */}
+        <CardFooter className="flex items-center justify-center w-full mt-4">
           <InlineQuery btnTitle={t("getQuote")} title={t(title)} />
         </CardFooter>
       </Card>

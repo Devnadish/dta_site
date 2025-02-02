@@ -2,6 +2,7 @@
 import { z } from "zod";
 import db from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { sendWhatsAppMessage } from "@/lib/actions/sendWhatsapp";
 
 const formSchema = z.object({
   name: z
@@ -20,24 +21,6 @@ const formSchema = z.object({
     .min(10, "Brief description must be at least 10 characters.")
     .max(500, "Brief description must not exceed 500 characters."),
 });
-
-async function sendWhatsAppMessage(message: string) {
-  const apiKey = process.env.CALLMEBOT_API_KEY as string;
-  const phone = process.env.CALLMEBOT_PHONE as string;
-  const encodedMessage = encodeURIComponent(message);
-
-  try {
-    const response = await fetch(
-      `https://api.callmebot.com/whatsapp.php?phone=${phone}&text=${encodedMessage}&apikey=${apiKey}`
-    );
-
-    if (!response.ok) {
-      console.error("Failed to send WhatsApp message");
-    }
-  } catch (error) {
-    console.error("Error sending WhatsApp message:", error);
-  }
-}
 
 export async function submitForm(
   prevState: Record<string, any>,

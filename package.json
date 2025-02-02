@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "preinstall": "npx geoip-lite-fetch",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -38,7 +39,7 @@
     "cloudinary": "^2.5.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.0.5",
-    "ipinfo": "^1.5.1",
+    "geoip-lite": "^1.4.10",
     "lottie-web": "^5.12.2",
     "lucide-react": "^0.473.0",
     "next": "15.1.6",
@@ -57,6 +58,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@types/geoip-lite": "^1.4.4",
     "@types/node": "^22.10.7",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",

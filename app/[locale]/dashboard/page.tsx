@@ -30,6 +30,7 @@ type Visitor = {
   country: string | null; // Optional field from Prisma schema
   city: string | null; // Optional field from Prisma schema
   updatedAt: Date; // updated to Date
+  visitCount: number | 0;
 };
 
 export default async function Dashboard() {
@@ -43,6 +44,20 @@ export default async function Dashboard() {
       {/* Tabs Section */}
       <Tabs defaultValue="contact-us">
         <TabsList>
+          <TabsTrigger value="contact-us">
+            Crombo
+            <Badge className="ml-2" variant="secondary">
+              {contacts.length}
+            </Badge>
+          </TabsTrigger>
+
+          <TabsTrigger value="contact-us">
+            Prices Req
+            <Badge className="ml-2" variant="secondary">
+              {contacts.length}
+            </Badge>
+          </TabsTrigger>
+
           <TabsTrigger value="contact-us">
             Contact Us
             <Badge className="ml-2" variant="secondary">
@@ -156,7 +171,10 @@ export default async function Dashboard() {
                 >
                   <CardHeader>
                     <CardTitle className="text-lg font-semibold">
-                      {item.ip || "Unknown IP"}
+                      {item.ip || "Unknown IP"}{" "}
+                      <span className="bg-green-500 text-white rounded-full p-1 text-xs size-6 ">
+                        {item.visitCount}
+                      </span>
                     </CardTitle>
                   </CardHeader>
                   <CardContent>

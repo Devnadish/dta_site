@@ -1,7 +1,5 @@
-import React from "react";
+import LaunchPageClient from "./component/LaunchPageClient";
 
-function page() {
-  return <div>crombo Page</div>;
+export default function LaunchPage() {
+  return <LaunchPageClient />;
 }
-
-export default page;

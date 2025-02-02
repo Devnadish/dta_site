@@ -3,6 +3,7 @@
 import { z } from "zod";
 import db from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
+import { sendWhatsAppMessage } from "@/lib/actions/sendWhatsapp";
 
 // Validation schema using zod
 const contactFormSchema = z.object({
@@ -13,25 +14,25 @@ const contactFormSchema = z.object({
 });
 
 // WhatsApp Notification Function
-async function sendWhatsAppMessage(message: string): Promise<void> {
-  const apiKey = process.env.CALLMEBOT_API_KEY;
-  const phone = process.env.CALLMEBOT_PHONE;
+// async function sendWhatsAppMessage(message: string): Promise<void> {
+//   const apiKey = process.env.CALLMEBOT_API_KEY;
+//   const phone = process.env.CALLMEBOT_PHONE;
 
-  if (!apiKey || !phone) {
-    console.error("Missing WhatsApp API credentials.");
-    return;
-  }
+//   if (!apiKey || !phone) {
+//     console.error("Missing WhatsApp API credentials.");
+//     return;
+//   }
 
-  const encodedMessage = encodeURIComponent(message);
-  const url = `https://api.callmebot.com/whatsapp.php?phone=${phone}&text=${encodedMessage}&apikey=${apiKey}`;
+//   const encodedMessage = encodeURIComponent(message);
+//   const url = `https://api.callmebot.com/whatsapp.php?phone=${phone}&text=${encodedMessage}&apikey=${apiKey}`;
 
-  try {
-    const response = await fetch(url);
-    if (!response.ok) console.error("Failed to send WhatsApp message.");
-  } catch (error) {
-    console.error("Error sending WhatsApp message:", error);
-  }
-}
+//   try {
+//     const response = await fetch(url);
+//     if (!response.ok) console.error("Failed to send WhatsApp message.");
+//   } catch (error) {
+//     console.error("Error sending WhatsApp message:", error);
+//   }
+// }
 
 // Submit Contact Function
 export async function submitContact(

@@ -27,10 +27,33 @@ model expressQuery {
 
 
 model Visitor {
-  id               String          @id @default(auto()) @map("_id") @db.ObjectId
-  ip               String?
-  country          String? // Added country field
-  city             String?
-  createdAt        DateTime        @default(now())
-  updatedAt        DateTime        @updatedAt
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  ip         String   @unique
+  country    String?  
+  city       String?  
+  region     String?  
+  org        String?  
+  timezone   String?  
+  visitCount Int      @default(1)  // Track the number of visits
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Crombo {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  company      String
+  name      String
+  mobile    String
+  email     String
+  note String
+  createdAt DateTime @default(now())
+}
+
+model Price {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  mobile    String
+  email     String
+  packageTtype  String
+  createdAt DateTime @default(now())
 }

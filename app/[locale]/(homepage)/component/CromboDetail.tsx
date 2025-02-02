@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { buttonVariants } from "@/components/ui/button";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import {
   Card,
   CardContent,
@@ -10,90 +10,63 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Text from "@/components/Text";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-
-const arDetail = {
-  name: "كرمبو",
-  title: "خدمة عملاء سهلة وشاملة في متناول يدك",
-  description:
-    "مع كرمبو، اجعل تجربة عملائك لا تُنسى! نظام ذكي يتيح لك استقبال الاستفسارات، معالجة الشكاوى، والاستفادة من الاقتراحات بسهولة واحترافية. يضمن كرمبو تواصلاً فوريًا وبناء علاقة ثقة طويلة الأمد مع عملائك، مما يجعل عملك أقرب إليهم وأكثر نجاحًا.",
-
-  action: "ابدأ ولا تفقد عميلًا بعد اليوم!",
-  free: "🚀 جرّب مجانًا الآن ولا تفوّت الفرصة! ",
-};
-
-const enDetail = {
-  name: "Crombo",
-  title: "Effortless and Comprehensive Customer Service",
-  description:
-    "Transform your customer experience with Crombo! Seamlessly manage inquiries, resolve complaints, and embrace feedback with a smart platform designed to bring your business closer to your customers.",
-  action: "Get started",
-  free: "Try for Free Now!",
-};
+import ShowTimer from "../../crombo/component/ShowTimer";
 
 async function CromboDetail() {
   const locale = await getLocale();
+  const t = await getTranslations("crombo"); // Translations from en.json & ar.json
 
   return (
-    <Card className="flex items-center justify-between flex-col bg-gradient-blue-modern dark:bg-gradient-custom border border-white/70 max-w-4xl mx-auto">
-      <CardHeader>
-        <CardTitle className="flex flex-col items-center gap-4 ">
-          <Text
-            variant="p"
-            locale={locale}
-            className="text-xl font-bold"
-            cairoFont
-          >
-            {locale === "ar" ? arDetail.name : enDetail.name}
-          </Text>
+    <Card className="flex flex-col items-center justify-between bg-gradient-to-b from-blue-900 to-gray-800 dark:bg-gradient-custom border border-white/30 max-w-4xl mx-auto rounded-2xl shadow-lg p-8">
+      {/* Header Section */}
+      <CardHeader className="text-center space-y-4">
+        <ShowTimer />
+        <CardTitle className="flex flex-col items-center gap-3">
+          <h1 className="text-2xl font-bold text-white">{t("name")}</h1>
         </CardTitle>
-        <CardDescription>
-          <Text variant="p" locale={locale} cairoFont>
-            {locale === "ar" ? arDetail.title : enDetail.title}
-          </Text>
+        <CardDescription className="text-lg font-medium text-gray-300">
+          {t("title")}
         </CardDescription>
       </CardHeader>
 
-      <CardContent>
-        <div className="flex items-center space-x-4 rtl:space-x-reverse">
-          {/* Inline Image */}
-          <div className="relative w-[70px] h-[130px] flex-shrink-0">
-            <Image
-              src={"/assets/homepage/cromboPlugin.png"}
-              fill
-              alt={"Canon Project"}
-              className="object-contain object-center"
-              sizes="(max-width: 400px) 100vw, 400px"
-              priority
-            />
-          </div>
-          <Text variant="span" locale={locale} className="text-lg leading-6">
-            {locale === "ar" ? arDetail.description : enDetail.description}
-          </Text>
+      {/* Main Content Section */}
+      <CardContent className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6 rtl:space-x-reverse w-full">
+        {/* Product Image */}
+        <div className="relative w-[100px] h-[160px] md:w-[140px] md:h-[200px] flex-shrink-0">
+          <Image
+            src="/assets/homepage/cromboPlugin.png"
+            fill
+            alt="Crombo Plugin"
+            className="object-contain object-center"
+            sizes="(max-width: 400px) 100vw, 400px"
+            priority
+          />
         </div>
+
+        {/* Description */}
+        <p className="text-base leading-relaxed text-gray-200 text-center md:text-left">
+          {t("description")}
+        </p>
       </CardContent>
 
-      <CardFooter className="flex  items-center justify-center flex-col  w-full ">
-        <span className="font-bold animate-pulse   rounded ">
-          {arDetail.free}
+      {/* Footer Section */}
+      <CardFooter className="flex flex-col items-center justify-center space-y-6 w-full">
+        {/* Call-to-Action */}
+        <span className="font-bold text-xl animate-pulse text-white">
+          {t("free")}
         </span>
+
+        {/* Action Button */}
         <Link
           href={`/${locale}/crombo`}
           className={cn(
             buttonVariants({ variant: "default" }),
-            "bg-white text-black text-lg hover:bg-white/90  "
+            "bg-white text-black text-lg hover:bg-white/90 transition-all duration-300 ease-in-out px-8 py-3 rounded-lg shadow-md"
           )}
         >
-          <Text
-            variant="h2"
-            locale={locale}
-            className="text-lg text-wrap"
-            cairoFont
-          >
-            {locale === "ar" ? arDetail.action : enDetail.action}
-          </Text>
+          <span className="text-lg font-semibold">{t("action")}</span>
         </Link>
       </CardFooter>
     </Card>

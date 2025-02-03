@@ -27,24 +27,37 @@ export async function getIpInfo(): Promise<{
 
     // Get real public IP if running locally
     if (ip === "127.0.0.1" || ip === "::1") {
-      try {
-        const publicIpResponse = await fetch(
-          "https://api64.ipify.org?format=json",
-          {
-            cache: "no-store",
-            next: { revalidate: 0 }, // Ensures Next.js 15 does not cache this request
-          }
-        );
-
-        if (!publicIpResponse.ok) throw new Error("Failed to fetch public IP");
-
-        const publicIpData = await publicIpResponse.json();
-        ip = publicIpData.ip;
-      } catch (error) {
-        console.error("⚠️ Public IP fetch failed:", error);
-        ip = "Unknown"; // Set default if request fails
-      }
+      return {
+        ip: "local",
+        location: {
+          country: "Local",
+          city: "Local",
+          region: "Local",
+          org: "Local",
+          timezone: "Local",
+        },
+        visitCount: 1,
+      };
     }
+    // if (ip === "127.0.0.1" || ip === "::1") {
+    //   try {
+    //     const publicIpResponse = await fetch(
+    //       "https://api64.ipify.org?format=json",
+    //       {
+    //         cache: "no-store",
+    //         next: { revalidate: 0 }, // Ensures Next.js 15 does not cache this request
+    //       }
+    //     );
+
+    //     if (!publicIpResponse.ok) throw new Error("Failed to fetch public IP");
+
+    //     const publicIpData = await publicIpResponse.json();
+    //     ip = publicIpData.ip;
+    //   } catch (error) {
+    //     console.error("⚠️ Public IP fetch failed:", error);
+    //     ip = "Unknown"; // Set default if request fails
+    //   }
+    // }
 
     let ipInfo: GeoLocation = {
       country: "Unknown",

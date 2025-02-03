@@ -49,14 +49,14 @@ export default function FormData({
   }, [state.success, state.message]); // Trigger when form submission is successful
 
   return (
-    <Card className="w-full mx-auto shadow-lg p-6 rounded-xl border border-gray-200 bg-white overflow-auto">
+    <Card className="w-full mx-auto shadow-lg p-6 rounded-xl border border-gray-200 bg-white overflow-auto text-primary">
       <CardContent>
         <form action={action} className="grid gap-6">
           {/* Type Field */}
           <Input id="type" name="type" type="hidden" defaultValue={type} />
           {/* Name Field */}
           <div className="grid gap-2">
-            <Label htmlFor="name" className="font-semibold">
+            <Label htmlFor="name" className="font-semibold text-primary">
               {locale === "ar" ? "الاسم" : "Name"}
             </Label>
             <Input
@@ -68,7 +68,7 @@ export default function FormData({
 
           {/* Mobile Field */}
           <div className="grid gap-2">
-            <Label htmlFor="mobile" className="font-semibold">
+            <Label htmlFor="mobile" className="font-semibold  text-primary">
               {locale === "ar" ? "رقم الجوال" : "Mobile"}
             </Label>
             <Input
@@ -80,8 +80,8 @@ export default function FormData({
           </div>
 
           {/* Brief Description Field */}
-          <div className="grid gap-2">
-            <Label htmlFor="brief" className="font-semibold">
+          <div className="grid gap-2 text-primary font-semibold">
+            <Label htmlFor="brief" className="font-semibold  text-primary">
               {locale === "ar" ? "وصف مختصر" : "Brief"}
             </Label>
             <Textarea

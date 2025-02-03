@@ -8,6 +8,9 @@ import { submitForm } from "./action";
 import { Textarea } from "../ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner"; // Importing Sonner's toast function
+import { DialogClose } from "../ui/dialog";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "../../lib/utils";
 
 // Define the initial state for the form
 const initialState = {
@@ -92,19 +95,30 @@ export default function FormData({
           </div>
 
           {/* Submit Button */}
-          <Button
-            type="submit"
-            disabled={isPending}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300"
-          >
-            {isPending
-              ? locale === "ar"
-                ? "جارٍ الإرسال..."
-                : "Sending..."
-              : locale === "ar"
-              ? "ارسال"
-              : "Send"}
-          </Button>
+          <div className="flex items-center gap-2 ">
+            <Button
+              type="submit"
+              disabled={isPending}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300"
+            >
+              {isPending
+                ? locale === "ar"
+                  ? "جارٍ الإرسال..."
+                  : "Sending..."
+                : locale === "ar"
+                ? "ارسال"
+                : "Send"}
+            </Button>
+            <DialogClose
+              className={cn(
+                buttonVariants({ variant: "default" }),
+                "bg-white text-black text-lg hover:bg-white/90 transition-all duration-300 ease-in-out px-8 py-3 rounded-lg shadow-md"
+              )}
+              type="button"
+            >
+              X
+            </DialogClose>
+          </div>
         </form>
       </CardContent>
     </Card>

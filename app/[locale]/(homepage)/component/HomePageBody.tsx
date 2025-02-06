@@ -1,5 +1,5 @@
 import React from "react";
-import Services from "./Services";
+import Services from "./service/Services";
 import WhyChooseUs from "./WhyChooseUs";
 import Footer from "./Footer";
 import FromIdea from "./FromIdea";

@@ -10,7 +10,7 @@ import {
 import Image from "next/image";
 import Text from "@/components/Text";
 import { getLocale, getTranslations } from "next-intl/server";
-import { InlineQuery } from "@/components/InlineQuery/InlineQuery";
+import InlineQueryWrapper from "@/components/InlineQuery/InlineQueryWrapper";
 
 export const DesinAndDiscover = async () => {
   const t = await getTranslations("homepage");
@@ -74,7 +74,7 @@ export const DesinAndDiscover = async () => {
       {/* Footer Section */}
       <CardFooter className="flex flex-col items-center gap-4 p-6">
         {/* Inline Query Component */}
-        <InlineQuery
+        <InlineQueryWrapper
           btnTitle={t("discoverButton")}
           title={t("discoverDilogTitle")}
           subtitle={t("discoverDilog")}

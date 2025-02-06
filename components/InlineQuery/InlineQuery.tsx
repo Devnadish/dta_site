@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -6,13 +7,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-  DialogClose,
 } from "@/components/ui/dialog";
 
 import { useLocale } from "next-intl";
 import FormData from "./FormQuery";
 
-export function InlineQuery({
+export default function InlineQuery({
   btnTitle,
   title = "DreamToApp",
   description = "DreamToApp",

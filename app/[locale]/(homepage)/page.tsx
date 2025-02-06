@@ -2,6 +2,7 @@ import HomePageBody from "./component/HomePageBody";
 import CromboDetail from "./component/CromboDetail";
 import CareerBlock from "./component/HeaderSection";
 import { getIpInfo } from "../../../lib/actions/getIp";
+import { WavyPaths } from "../../../components/WavyPaths";
 
 export default async function Page() {
   const ipInfo = await getIpInfo();
@@ -9,6 +10,7 @@ export default async function Page() {
   return (
     <div className="flex  flex-col gap-4   " id="mainpage">
       <CareerBlock />
+      <WavyPaths />
       <div className="grid  gap-4 grid-cols-1 md:grid-cols-1 p-2 ">
         <CromboDetail />
       </div>

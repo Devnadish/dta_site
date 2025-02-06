@@ -8,6 +8,7 @@ import Link from "next/link";
 import Text from "../../../../components/Text";
 import { cn } from "../../../../lib/utils";
 import { buttonVariants } from "../../../../components/ui/button";
+import { WavyPaths } from "../../../../components/WavyPaths";
 
 const CareerBlock = () => {
   const containerRef = useRef<HTMLDivElement>(null);
